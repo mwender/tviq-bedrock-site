@@ -13,7 +13,7 @@ Our WordPress + Elementor + Hello Theme setup allowed us to build this site enti
 ## Local Tools
 
 - Site is a local instance accessible at [https://tviq.test](https://tviq.test) setup with Laravel Valet.
-- The WP CLI is available; run from `web/`. Example: `wp --info --path=/Users/mwender/webdev/laravel-valet/bedrock/tviq.io/web`
+- The WP CLI is available; run from the project root — `wp-cli.yml` sets `path: web/wp` automatically. Example: `wp plugin list`
 - The [WordPress MCP Adapter](https://github.com/WordPress/mcp-adapter) and [Elementor MCP](https://github.com/msrbuilds/elementor-mcp) plugins are installed and activated.
 - `agent-browser` is available; Browser automation CLI designed for AI agents. Compact text output minimizes context usage.
 
