@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(agent-browser snapshot *)",
+      "mcp__tviq-elementor__elementor-mcp-detect-elementor-version",
+      "mcp__tviq-elementor__elementor-mcp-export-page",
+      "mcp__tviq-elementor__elementor-mcp-find-element",
+      "mcp__tviq-elementor__elementor-mcp-get-container-schema",
+      "mcp__tviq-elementor__elementor-mcp-get-element-settings",
+      "mcp__tviq-elementor__elementor-mcp-get-global-settings",
+      "mcp__tviq-elementor__elementor-mcp-get-page-structure",
+      "mcp__tviq-elementor__elementor-mcp-list-code-snippets",
+      "mcp__tviq-elementor__elementor-mcp-list-dynamic-tags",
+      "mcp__tviq-elementor__elementor-mcp-list-templates",
+      "mcp__tviq-elementor__elementor-mcp-list-widgets",
+      "mcp__tviq-elementor__elementor-mcp-search-images",
+      "mcp__tviq-wp__mcp-adapter-discover-abilities",
+      "mcp__tviq-wp__mcp-adapter-get-ability-info"
+    ]
+  }
+}

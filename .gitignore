@@ -1,0 +1,41 @@
+# Application
+web/app/plugins/*
+!web/app/plugins/.gitkeep
+web/app/mu-plugins/*/
+web/app/themes/hello-elementor/
+web/app/upgrade
+web/app/uploads/*
+!web/app/uploads/.gitkeep
+web/app/cache/*
+web/app/updraft/
+sql/
+auth.json
+
+# Local work directory (scripts, context docs, scratch files)
+bin/
+
+# Old standard WP install (pre-migration)
+public/
+public-backup/
+
+# WordPress
+web/wp
+web/.htaccess
+
+# Logs
+*.log
+
+# Dotenv
+.env
+.env.*
+!.env.example
+
+# Composer
+/vendor
+
+# WP-CLI
+wp-cli.local.yml
+
+# Misc
+*.sublime-*
+*.sh

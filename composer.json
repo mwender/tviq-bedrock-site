@@ -1,0 +1,78 @@
+{
+  "name": "wenderhost/tviq-bedrock-site",
+  "type": "project",
+  "license": "MIT",
+  "description": "WordPress boilerplate with Composer, easier configuration, and an improved folder structure",
+  "homepage": "https://roots.io/bedrock/",
+  "repositories": {
+    "0": {
+      "type": "composer",
+      "url": "https://wpackagist.org",
+      "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
+    },
+    "1": {
+      "type": "composer",
+      "url": "https://packages.wenmarkdigital.com/satispress/",
+      "only": ["wenmark/*"]
+    },
+    "2": {
+      "type": "composer",
+      "url": "https://connect.advancedcustomfields.com"
+    }
+  },
+  "require": {
+    "php": ">=8.3",
+    "composer/installers": "^2.2",
+    "oscarotero/env": "^2.1",
+    "roots/bedrock-autoloader": "^1.0",
+    "roots/bedrock-disallow-indexing": "^2.0",
+    "roots/wordpress": "6.9.4",
+    "roots/wp-config": "1.0.0",
+    "vlucas/phpdotenv": "^5.5",
+    "lukasbesch/bedrock-plugin-disabler": "^1.5",
+    "wpackagist-plugin/ads-txt": "*",
+    "wenmark/analyticswp": "*",
+    "wpengine/advanced-custom-fields-pro": "^6",
+    "wpackagist-plugin/disable-gutenberg": "*",
+    "wpackagist-plugin/duplicate-page": "*",
+    "wpackagist-plugin/elementor": "^3",
+    "wenmark/elementor-pro": "^3",
+    "wpackagist-plugin/insert-headers-and-footers": "*",
+    "wpackagist-plugin/limit-login-attempts-reloaded": "*",
+    "wordpress/mcp-adapter": "*",
+    "wpackagist-plugin/safe-svg": "*",
+    "wenmark/sellers-json": "*",
+    "wpackagist-plugin/smtp2go": "*",
+    "wpackagist-plugin/spinupwp": "*",
+    "wpackagist-theme/hello-elementor": "*"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.27",
+    "pestphp/pest": "^4.0"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "allow-plugins": {
+      "composer/installers": true,
+      "roots/wordpress-core-installer": true,
+      "pestphp/pest-plugin": true
+    },
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "installer-paths": {
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
+      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "wordpress-install-dir": "web/wp"
+  },
+  "scripts": {
+    "lint": "pint --test",
+    "lint:fix": "pint",
+    "test": "pest"
+  }
+}
