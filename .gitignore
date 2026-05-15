@@ -36,6 +36,9 @@ web/.htaccess
 # WP-CLI
 wp-cli.local.yml
 
+# MCP config (contains local credentials)
+.mcp.json
+
 # Misc
 *.sublime-*
 *.sh
