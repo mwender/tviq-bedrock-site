@@ -97,7 +97,23 @@ function tviq_handle_select_demo(WP_REST_Request $request): WP_REST_Response {
             : 'Submission failed. Please try again.';
 
         if (defined('WP_DEBUG_LOG') && WP_DEBUG_LOG) {
-            error_log('[TVIQ Select] Submission failed for ' . $ip . ': ' . $message);
+            if (is_wp_error($result)) {
+                error_log(sprintf(
+                    '[TVIQ Select] WP_Error for %s (form_id=%d): [%s] %s',
+                    $ip,
+                    TVIQ_SELECT_FORM_ID,
+                    $result->get_error_code(),
+                    $result->get_error_message()
+                ));
+            } else {
+                $validation = $result['validation_messages'] ?? [];
+                error_log(sprintf(
+                    '[TVIQ Select] GF validation failed for %s (form_id=%d): %s',
+                    $ip,
+                    TVIQ_SELECT_FORM_ID,
+                    wp_json_encode($validation)
+                ));
+            }
         }
 
         return new WP_REST_Response(['success' => false, 'message' => $message], 400);
