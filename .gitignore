@@ -10,6 +10,8 @@ web/app/cache/*
 web/app/updraft/
 sql/
 auth.json
+web/select-*
+!web/select-01
 
 # Local work directory (scripts, context docs, scratch files)
 bin/*
