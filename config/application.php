@@ -142,6 +142,9 @@ Config::define('NONCE_SALT', env('NONCE_SALT'));
  * Gravity Forms
  */
 Config::define('GF_LICENSE_KEY', env('GF_LICENSE_KEY'));
+Config::define('TVIQ_SELECT_FORM_ID', env('TVIQ_SELECT_FORM_ID'));
+Config::define('TVIQ_SELECT_ALLOWED_ORIGIN', env('TVIQ_SELECT_ALLOWED_ORIGIN'));
+Config::define('TVIQ_SELECT_RATE_LIMIT', env('TVIQ_SELECT_RATE_LIMIT') ?: 5);
 
 /**
  * Custom Settings

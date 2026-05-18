@@ -1,10 +1,42 @@
 <?php
 /**
- * REST endpoint: TVIQ Select demo request form → Gravity Forms (form ID 1).
+ * REST endpoint: TVIQ Select demo request form → Gravity Forms.
  * Route: POST /wp-json/tviq/v1/select-demo
+ *
+ * Required constants (set in .env → config/application.php):
+ *   TVIQ_SELECT_FORM_ID       — Gravity Forms form ID for the Select demo request form
+ *
+ * Optional constants:
+ *   TVIQ_SELECT_ALLOWED_ORIGIN — CORS Access-Control-Allow-Origin value (omit if same-origin)
+ *   TVIQ_SELECT_RATE_LIMIT     — Max submissions per IP per hour; default 5
  */
 
+// Admin notice if required constants are missing
+add_action('admin_notices', function () {
+    if (!current_user_can('manage_options')) return;
+
+    $missing = [];
+    if (!defined('TVIQ_SELECT_FORM_ID')) $missing[] = 'TVIQ_SELECT_FORM_ID';
+    if (empty($missing)) return;
+
+    $env_lines = implode("\n", array_map(fn($c) => "{$c}='your-value-here'", $missing));
+    $php_lines = implode("\n", array_map(fn($c) => "Config::define('{$c}', env('{$c}'));", $missing));
+
+    printf(
+        '<div class="notice notice-error"><p><strong>TVIQ Select Demo Endpoint</strong> — missing required constants:</p>'
+            . '<ul>%s</ul>'
+            . '<p>Add to <code>.env</code>:</p><pre>%s</pre>'
+            . '<p>Add to <code>config/application.php</code> (Gravity Forms section):</p><pre>%s</pre></div>',
+        implode('', array_map(fn($c) => '<li><code>' . esc_html($c) . '</code></li>', $missing)),
+        esc_html($env_lines),
+        esc_html($php_lines)
+    );
+});
+
+// Only register the route if the required constant is present
 add_action('rest_api_init', function () {
+    if (!defined('TVIQ_SELECT_FORM_ID')) return;
+
     register_rest_route('tviq/v1', '/select-demo', [
         'methods'             => 'POST',
         'callback'            => 'tviq_handle_select_demo',
@@ -26,11 +58,30 @@ add_action('rest_api_init', function () {
 });
 
 function tviq_handle_select_demo(WP_REST_Request $request): WP_REST_Response {
+    if (defined('TVIQ_SELECT_ALLOWED_ORIGIN')) {
+        header('Access-Control-Allow-Origin: ' . TVIQ_SELECT_ALLOWED_ORIGIN);
+    }
+
     if (!class_exists('GFAPI')) {
         return new WP_REST_Response(['success' => false, 'message' => 'Form service unavailable.'], 503);
     }
 
-    $result = GFAPI::submit_form(1, [
+    // Rate limiting via transients: configurable, default 5 submissions/IP/hour
+    $limit = defined('TVIQ_SELECT_RATE_LIMIT') ? (int) TVIQ_SELECT_RATE_LIMIT : 5;
+    $ip    = sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR'] ?? ''));
+    $key   = 'tviq_select_rl_' . md5($ip);
+    $count = (int) get_transient($key);
+
+    if ($count >= $limit) {
+        return new WP_REST_Response(
+            ['success' => false, 'message' => 'Too many requests. Please try again later.'],
+            429
+        );
+    }
+
+    set_transient($key, $count + 1, HOUR_IN_SECONDS);
+
+    $result = GFAPI::submit_form((int) TVIQ_SELECT_FORM_ID, [
         'input_1' => $request->get_param('first_name'),
         'input_2' => $request->get_param('last_name'),
         'input_3' => $request->get_param('company'),
@@ -44,6 +95,11 @@ function tviq_handle_select_demo(WP_REST_Request $request): WP_REST_Response {
         $message = is_wp_error($result)
             ? $result->get_error_message()
             : 'Submission failed. Please try again.';
+
+        if (defined('WP_DEBUG_LOG') && WP_DEBUG_LOG) {
+            error_log('[TVIQ Select] Submission failed for ' . $ip . ': ' . $message);
+        }
+
         return new WP_REST_Response(['success' => false, 'message' => $message], 400);
     }
 
