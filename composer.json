@@ -36,6 +36,7 @@
     "wenmark/sellers-json": "*",
     "wordpress/mcp-adapter": "*",
     "wpackagist-plugin/ads-txt": "*",
+    "wpackagist-plugin/akismet": "^5.7",
     "wpackagist-plugin/disable-gutenberg": "*",
     "wpackagist-plugin/duplicate-page": "*",
     "wpackagist-plugin/elementor": "^3",
