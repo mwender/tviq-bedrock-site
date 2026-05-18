@@ -104,7 +104,7 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background: url('https://tviq.test/one-sheet/image1.jpg') center right / cover no-repeat;
+      background: url('/one-sheet/image1.jpg') center right / cover no-repeat;
       opacity: 0.28;
     }
     .hero-gradient {
@@ -478,21 +478,21 @@
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon-wrap">
-          <img src="https://tviq.test/one-sheet/image7.svg" alt="" width="34" height="34">
+          <img src="/one-sheet/image7.svg" alt="" width="34" height="34">
         </div>
         <h3>Curated Supply</h3>
         <p>Premium, brand-safe CTV inventory sourced directly from trusted publishers. Not open-exchange remnants — every impression is hand-selected and quality-verified.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon-wrap" style="background: linear-gradient(135deg, var(--purple), var(--navy-mid));">
-          <img src="https://tviq.test/one-sheet/image3.svg" alt="" width="34" height="34">
+          <img src="/one-sheet/image3.svg" alt="" width="34" height="34">
         </div>
         <h3>Smart Tech</h3>
         <p>Intelligent tiering and optimization across 15B+ daily requests. The pipes are as smart as the supply is clean — precision at programmatic scale.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon-wrap" style="background: linear-gradient(135deg, #1a0e56, var(--purple));">
-          <img src="https://tviq.test/one-sheet/image4.svg" alt="" width="34" height="34">
+          <img src="/one-sheet/image4.svg" alt="" width="34" height="34">
         </div>
         <h3>Hands-On Expertise</h3>
         <p>Dedicated media operations and ongoing strategic support. Real humans working alongside your team to ensure campaigns perform, not just deliver.</p>
@@ -511,7 +511,7 @@
     <div class="tiers-list">
       <div class="tier-card">
         <div class="tier-icon-wrap">
-          <img src="https://tviq.test/one-sheet/image5.svg" alt="" width="44" height="44">
+          <img src="/one-sheet/image5.svg" alt="" width="44" height="44">
         </div>
         <div class="tier-body">
           <h3>Publisher Direct</h3>
@@ -520,7 +520,7 @@
       </div>
       <div class="tier-card">
         <div class="tier-icon-wrap">
-          <img src="https://tviq.test/one-sheet/image8.svg" alt="" width="44" height="44">
+          <img src="/one-sheet/image8.svg" alt="" width="44" height="44">
         </div>
         <div class="tier-body">
           <h3>Select Marketplace</h3>
@@ -529,7 +529,7 @@
       </div>
       <div class="tier-card">
         <div class="tier-icon-wrap">
-          <img src="https://tviq.test/one-sheet/image6.svg" alt="" width="44" height="44">
+          <img src="/one-sheet/image6.svg" alt="" width="44" height="44">
         </div>
         <div class="tier-body">
           <h3>Audience Extension</h3>
