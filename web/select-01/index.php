@@ -165,12 +165,8 @@
     .features-header .section-sub { max-width: 540px; margin: 0 auto; }
     .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
     .feature-card {
-      padding: 40px 36px; border: 1px solid var(--border);
-      border-top: 3px solid var(--blue);
-    }
-    .feature-card:nth-child(2) { border-top-color: var(--purple); }
-    .feature-card:nth-child(3) {
-      border-top: 3px solid; border-image: linear-gradient(90deg, var(--blue), var(--purple)) 1;
+      padding: 40px 36px; border: 1px solid;
+      border-top-width: 3px; border-image: linear-gradient(90deg, var(--blue), var(--purple)) 1;
     }
     .feature-icon-wrap {
       width: 72px; height: 72px; border-radius: 14px;
