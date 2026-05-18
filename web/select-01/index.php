@@ -173,11 +173,11 @@
       border-top: 3px solid; border-image: linear-gradient(90deg, var(--blue), var(--purple)) 1;
     }
     .feature-icon-wrap {
-      width: 60px; height: 60px; border-radius: 14px;
+      width: 72px; height: 72px; border-radius: 14px;
       display: flex; align-items: center; justify-content: center; margin-bottom: 28px;
       background: linear-gradient(135deg, var(--navy), var(--navy-mid));
     }
-    .feature-icon-wrap img { width: 34px; height: 34px; object-fit: contain; }
+    .feature-icon-wrap img { width: 52px; height: 52px; object-fit: contain; }
     .feature-card h3 { font-size: 19px; font-weight: 700; color: var(--fg); margin-bottom: 10px; }
     .feature-card p { font-size: 15px; line-height: 1.7; color: var(--muted); }
 
@@ -188,18 +188,18 @@
     .tier-card {
       background: var(--bg); border: 1px solid var(--border);
       padding: 36px 40px 36px 48px; display: grid;
-      grid-template-columns: 80px 1fr; gap: 36px; align-items: center; position: relative;
+      grid-template-columns: 92px 1fr; gap: 36px; align-items: center; position: relative;
     }
     .tier-card::before {
       content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
       background: linear-gradient(180deg, var(--blue), var(--purple));
     }
     .tier-icon-wrap {
-      width: 80px; height: 80px; border-radius: 18px;
+      width: 92px; height: 92px; border-radius: 18px;
       background: linear-gradient(135deg, var(--blue), var(--purple));
       display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
-    .tier-icon-wrap img { width: 44px; height: 44px; object-fit: contain; }
+    .tier-icon-wrap img { width: 66px; height: 66px; object-fit: contain; }
     .tier-body h3 {
       font-size: 18px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase;
       color: var(--fg); margin-bottom: 8px;
