@@ -139,6 +139,11 @@ Config::define('LOGGED_IN_SALT', env('LOGGED_IN_SALT'));
 Config::define('NONCE_SALT', env('NONCE_SALT'));
 
 /**
+ * Gravity Forms
+ */
+Config::define('GF_LICENSE_KEY', env('GF_LICENSE_KEY'));
+
+/**
  * Custom Settings
  */
 Config::define('AUTOMATIC_UPDATER_DISABLED', true);

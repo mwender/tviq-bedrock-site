@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "91a971a35490162ffc7c83a32d2253a5",
+    "content-hash": "cabc8ec219ced7dae19da06186fe08c1",
     "packages": [
         {
             "name": "composer/installers",
@@ -1125,6 +1125,27 @@
             ],
             "description": "Elevate your designs and unlock the full power of the Atomic Editor. Gain access to dozens of Pro widgets, Website Templates, Theme Builder, Pop Ups, Forms, reusable Components, and WooCommerce building capabilities.",
             "homepage": "https://go.elementor.com/wp-dash-wp-plugins-author-uri/"
+        },
+        {
+            "name": "wenmark/gravityforms",
+            "version": "2.10.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.wenmarkdigital.com/satispress/gravityforms/2.10.2",
+                "shasum": "dcbd841576305237dccfd50adea2e98c9143c662"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "authors": [
+                {
+                    "name": "Gravity Forms",
+                    "homepage": "https://gravityforms.com"
+                }
+            ],
+            "description": "Easily create web forms and manage form entries within the WordPress admin.",
+            "homepage": "https://gravityforms.com"
         },
         {
             "name": "wenmark/sellers-json",
