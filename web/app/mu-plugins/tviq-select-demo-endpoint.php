@@ -128,16 +128,6 @@ function tviq_handle_select_demo(WP_REST_Request $request): WP_REST_Response {
 
     $entry_id = $result['entry_id'] ?? 0;
 
-    // GFAPI::submit_form() doesn't reliably fire notifications outside GF's
-    // own POST cycle, so we send them explicitly here.
-    $form  = GFAPI::get_form((int) TVIQ_SELECT_FORM_ID);
-    $entry = GFAPI::get_entry($entry_id);
-    /*
-    if (!is_wp_error($entry)) {
-        GFAPI::send_notifications($form, $entry);
-    }
-    /**/
-
     if (defined('WP_DEBUG_LOG') && WP_DEBUG_LOG) {
         error_log(sprintf(
             '[TVIQ Select] Entry created for %s (form_id=%d, entry_id=%d)',
