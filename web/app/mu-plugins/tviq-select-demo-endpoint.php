@@ -81,15 +81,22 @@ function tviq_handle_select_demo(WP_REST_Request $request): WP_REST_Response {
 
     set_transient($key, $count + 1, HOUR_IN_SECONDS);
 
-    $result = GFAPI::submit_form((int) TVIQ_SELECT_FORM_ID, [
+    $input_values = [
         'input_1' => $request->get_param('first_name'),
         'input_2' => $request->get_param('last_name'),
         'input_3' => $request->get_param('company'),
         'input_4' => $request->get_param('email'),
-        'input_5' => $request->get_param('phone'),
         'input_6' => $request->get_param('interest'),
         'input_7' => $request->get_param('message'),
-    ]);
+    ];
+
+    // Only include phone if provided — avoids GF format validation on empty values
+    $phone = trim((string) $request->get_param('phone'));
+    if ($phone !== '') {
+        $input_values['input_5'] = $phone;
+    }
+
+    $result = GFAPI::submit_form((int) TVIQ_SELECT_FORM_ID, $input_values);
 
     if (is_wp_error($result) || empty($result['is_valid'])) {
         $message = is_wp_error($result)
