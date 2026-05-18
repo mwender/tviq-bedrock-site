@@ -17,19 +17,32 @@ Our WordPress + Elementor + Hello Theme setup allowed us to build this site enti
 - The [WordPress MCP Adapter](https://github.com/WordPress/mcp-adapter) and [Elementor MCP](https://github.com/msrbuilds/elementor-mcp) plugins are installed and activated.
 - `agent-browser` is available; Browser automation CLI designed for AI agents. Compact text output minimizes context usage.
 
+**IMPORTANT:** `agent-browser` is a **shell command** — invoke it via the Bash tool. Do NOT search for it via ToolSearch or look for it as an MCP tool. It will not be found there.
+
 `agent-browser` examples:
 ```
-# Navigate and get snapshot
-agent-browser open tviq.test
+# Navigate to local Valet site (--ignore-https-errors required for *.test on first open)
+agent-browser open https://tviq.test --ignore-https-errors
+
+# Chain commands with && — browser daemon persists between calls
+agent-browser open https://tviq.test/select-03 --ignore-https-errors && agent-browser wait 800 && agent-browser screenshot /tmp/out.png
+
+# Get snapshot of interactive elements, then interact by ref
 agent-browser snapshot -i
+# - button "Submit" [ref=e3]
+agent-browser click @e3
 
-# Output:
-# - heading "Example Domain" [ref=e1]
-# - link "More information..." [ref=e2]
+# Inspect values / computed styles via JS
+agent-browser eval "document.getElementById('phone').value"
 
-# Interact using refs
-agent-browser click @e2
-agent-browser screenshot page.png
+# View a screenshot inline: save to /tmp/, then use the Read tool on that path
+agent-browser screenshot /tmp/debug.png
+# → Read /tmp/debug.png
+
+# Reload after editing a file
+agent-browser reload
+
+# Close the daemon (required before restarting with new flags)
 agent-browser close
 ```
 
