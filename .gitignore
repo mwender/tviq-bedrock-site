@@ -13,7 +13,8 @@ auth.json
 web/select-*
 
 # Local work directory (scripts, context docs, scratch files)
-bin/
+bin/*
+!bin/gf-json/
 
 # Old standard WP install (pre-migration)
 public/
