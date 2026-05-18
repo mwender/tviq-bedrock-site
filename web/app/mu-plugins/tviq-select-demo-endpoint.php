@@ -126,5 +126,14 @@ function tviq_handle_select_demo(WP_REST_Request $request): WP_REST_Response {
         return new WP_REST_Response(['success' => false, 'message' => $message], 400);
     }
 
+    if (defined('WP_DEBUG_LOG') && WP_DEBUG_LOG) {
+        error_log(sprintf(
+            '[TVIQ Select] Entry created for %s (form_id=%d, entry_id=%d)',
+            $ip,
+            TVIQ_SELECT_FORM_ID,
+            $result['entry_id'] ?? 0
+        ));
+    }
+
     return new WP_REST_Response(['success' => true], 200);
 }
