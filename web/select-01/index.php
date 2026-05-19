@@ -8,6 +8,7 @@
   <style>
     /* ── Reset ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scrollbar-gutter: stable; }
 
     /* ── Design Tokens: Editorial-Monocle × TVIQ Brand ── */
     :root {
@@ -78,15 +79,21 @@
 
     /* ── Mobile Nav ── */
     .mobile-nav {
-      display: none; position: fixed; inset: 0; background: var(--navy-deep); z-index: 300;
-      flex-direction: column; align-items: flex-start; justify-content: center;
-      padding: 0 40px; gap: 0;
+      display: flex; position: fixed; inset: 0; background: var(--navy-deep); z-index: 300;
+      flex-direction: column; align-items: flex-start; justify-content: flex-start;
+      padding: 80px 20px 40px; gap: 0;
+      visibility: hidden; opacity: 0; pointer-events: none;
+      transform: translateY(-12px);
+      transition: opacity 0.25s ease, visibility 0.25s, transform 0.28s ease;
     }
-    .mobile-nav.open { display: flex; }
+    .mobile-nav.open {
+      visibility: visible; opacity: 1; pointer-events: auto; transform: translateY(0);
+    }
     .mobile-nav-close {
-      position: absolute; top: 18px; right: 24px; background: none; border: none;
-      color: rgba(255,255,255,0.5); font-size: 32px; line-height: 1; cursor: pointer;
-      font-family: var(--font);
+      position: absolute; top: 12px; right: 12px; background: none; border: none;
+      color: rgba(255,255,255,0.7); font-size: 44px; line-height: 1; cursor: pointer;
+      font-family: var(--font); padding: 8px; min-width: 56px; min-height: 56px;
+      display: flex; align-items: center; justify-content: center;
     }
     .mobile-nav a {
       font-size: 32px; font-weight: 300; color: rgba(255,255,255,0.85);
@@ -95,7 +102,13 @@
     }
     .mobile-nav a:last-of-type { border-bottom: none; }
     .mobile-nav a:hover { color: #fff; }
-    .mobile-nav .btn { margin-top: 32px; align-self: flex-start; }
+    .mobile-nav-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 40px; }
+    .mobile-nav-logo .nav-wordmark { font-size: 20px; }
+    .mobile-nav .btn {
+      margin-top: 32px; align-self: stretch; text-align: center;
+      white-space: normal; font-size: 18px; line-height: 1.4;
+      box-sizing: border-box; width: 100%;
+    }
 
     /* ── Hero ── */
     .hero {
@@ -422,6 +435,15 @@
 <!-- Mobile Nav Overlay -->
 <div class="mobile-nav" id="mobileNav" role="dialog" aria-label="Navigation">
   <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">×</button>
+  <div class="mobile-nav-logo">
+    <svg width="30" height="24" viewBox="0 0 30 24" fill="none" aria-hidden="true">
+      <rect x="0"  y="7"  width="5.5" height="17" rx="1.5" fill="url(#logoGrad)"/>
+      <rect x="8"  y="0"  width="5.5" height="24" rx="1.5" fill="url(#logoGrad)"/>
+      <rect x="16" y="4"  width="5.5" height="20" rx="1.5" fill="url(#logoGrad)"/>
+      <rect x="24" y="9"  width="5.5" height="15" rx="1.5" fill="url(#logoGrad)"/>
+    </svg>
+    <span class="nav-wordmark">TVIQ <em>Select</em></span>
+  </div>
   <a href="#features" onclick="closeMobileNav()">Features</a>
   <a href="#publishers" onclick="closeMobileNav()">Publishers</a>
   <a href="#tiers" onclick="closeMobileNav()">Products</a>
