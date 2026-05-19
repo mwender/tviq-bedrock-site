@@ -337,6 +337,33 @@
     .footer-contact-email { font-size: 16px; font-weight: 600; color: var(--blue); display: block; margin-bottom: 16px; }
     .footer-pillars { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.25); }
 
+    /* ── Publisher Logo Wall ── */
+    .publishers { background: var(--navy-mid); padding: var(--section-v) 0; }
+    .publishers-header { text-align: center; margin-bottom: 52px; }
+    .publishers-header .section-eyebrow { color: rgba(255,255,255,0.4); }
+    .publishers-header .section-headline { color: #fff; }
+    .publishers-header .section-sub { color: rgba(255,255,255,0.5); max-width: 480px; margin: 0 auto; }
+    .publishers-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-left: 1px solid rgba(255,255,255,0.08);
+    }
+    .pub-logo-cell {
+      display: flex; align-items: center; justify-content: center;
+      height: 132px; padding: 16px 24px;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      transition: background 0.2s;
+    }
+    .pub-logo-cell:hover { background: rgba(255,255,255,0.05); }
+    .pub-logo-cell img {
+      width: 100%; height: 100%; object-fit: contain;
+      opacity: 0.65; transition: opacity 0.2s;
+    }
+    .pub-logo-cell:hover img { opacity: 1; }
+
     /* ── Responsive 1024px ── */
     @media (max-width: 1024px) {
       .container { padding: 0 32px; }
@@ -352,6 +379,7 @@
       .nav-links, .nav-right .btn { display: none; }
       .nav-hamburger { display: flex; }
       .features-grid { grid-template-columns: 1fr; gap: 20px; }
+      .publishers-grid { grid-template-columns: repeat(3, 1fr); }
       .stats-bar .container { flex-direction: column; }
       .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 24px 20px; }
       .stat-item:last-child { border-bottom: none; }
@@ -376,6 +404,7 @@
     @media (max-width: 360px) {
       .container { padding: 0 16px; }
       .hero h1 { font-size: 30px; }
+      .publishers-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -394,6 +423,7 @@
 <div class="mobile-nav" id="mobileNav" role="dialog" aria-label="Navigation">
   <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">×</button>
   <a href="#features" onclick="closeMobileNav()">Features</a>
+  <a href="#publishers" onclick="closeMobileNav()">Publishers</a>
   <a href="#tiers" onclick="closeMobileNav()">Products</a>
   <a href="#how-it-works" onclick="closeMobileNav()">How It Works</a>
   <a href="#contact" onclick="closeMobileNav()">Contact</a>
@@ -414,6 +444,7 @@
     </a>
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
+      <li><a href="#publishers">Publishers</a></li>
       <li><a href="#tiers">Products</a></li>
       <li><a href="#how-it-works">How It Works</a></li>
     </ul>
@@ -497,6 +528,46 @@
         <h3>Hands-On Expertise</h3>
         <p>Dedicated media operations and ongoing strategic support. Real humans working alongside your team to ensure campaigns perform, not just deliver.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Publisher Logo Wall -->
+<section class="publishers" id="publishers">
+  <div class="container">
+    <div class="publishers-header">
+      <p class="section-eyebrow">Premium Publishers · Zero Open Exchange</p>
+      <h2 class="section-headline">Our Publisher Network</h2>
+      <p class="section-sub">Every partner is hand-selected. Every impression is direct. No open-market middlemen, no surprises.</p>
+    </div>
+    <div class="publishers-grid">
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_barboards_800x600.png" alt="Barboards" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_blue-ant-media_800x600.png" alt="Blue Ant Media" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_bonneville-international_800x600.png" alt="Bonneville International" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_bowling-center-tv_800x600.png" alt="Bowling Center TV" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_business-insider_800x600.png" alt="Business Insider" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_dailymotion_800x600.png" alt="Dailymotion" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_field-and-stream_800x600.png" alt="Field &amp; Stream" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_filmhub_800x600.png" alt="Filmhub" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_free-live-sports_800x600.png" alt="Free Live Sports" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_fremantle_800x600.png" alt="Fremantle" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_fusemedia_800x600.png" alt="Fuse Media" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_gnn-tv_800x600.png" alt="GNN TV" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_gustotv_800x600.png" alt="Gusto TV" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_hubbard-broadcasting_800x600.png" alt="Hubbard Broadcasting" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_insighttv_800x600.png" alt="Insight TV" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_janson_800x600.png" alt="Janson" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_justwatch_800x600.png" alt="JustWatch" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_media-pulse_800x600.png" alt="Media Pulse" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_multimerica-media_800x600.png" alt="Multimerica Media" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_ott-studio_800x600.png" alt="OTT Studio" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_outdoor-america_800x600.png" alt="Outdoor America" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_perfect-game_800x600.png" alt="Perfect Game" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_pursuit_800x600.png" alt="Pursuit" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_sportxads_800x600.png" alt="SportX Ads" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_telly_800x600.png" alt="Telly" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_tivo_800x600.png" alt="TiVo" loading="lazy"></div>
+      <div class="pub-logo-cell"><img src="/select-01/publisher-logos/logo_trusted-media-brands_800x600.png" alt="Trusted Media Brands" loading="lazy"></div>
     </div>
   </div>
 </section>
