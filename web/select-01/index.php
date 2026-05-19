@@ -397,7 +397,7 @@
   <a href="#tiers" onclick="closeMobileNav()">Products</a>
   <a href="#how-it-works" onclick="closeMobileNav()">How It Works</a>
   <a href="#contact" onclick="closeMobileNav()">Contact</a>
-  <a href="#contact" class="btn btn-primary" onclick="closeMobileNav()">Request a Demo</a>
+  <a href="#contact" class="btn btn-primary" onclick="closeMobileNav()">Connect for a Custom Solution</a>
 </div>
 
 <!-- Navigation -->
@@ -418,7 +418,7 @@
       <li><a href="#how-it-works">How It Works</a></li>
     </ul>
     <div class="nav-right">
-      <a href="#contact" class="btn btn-primary">Request a Demo</a>
+      <a href="#contact" class="btn btn-primary">Connect for a Custom Solution</a>
       <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
@@ -442,7 +442,7 @@
         TVIQ Select brings together curated supply, preferred access, and hands-on expertise to deliver superior outcomes for advertisers.
       </p>
       <div class="hero-cta">
-        <a href="#contact" class="btn btn-primary btn-lg">Request a Demo</a>
+        <a href="#contact" class="btn btn-primary btn-lg">Discuss Your Custom Solution</a>
         <a href="#how-it-works" class="btn btn-outline btn-lg">How It Works</a>
       </div>
     </div>
@@ -584,7 +584,7 @@
       <h2>Ready to elevate your<br><strong>CTV strategy?</strong></h2>
       <p>Join the agencies and brands already buying smarter.</p>
     </div>
-    <a href="#contact" class="btn btn-primary btn-lg">Request a Demo</a>
+    <a href="#contact" class="btn btn-primary btn-lg">Reach Out for a Custom Campaign</a>
   </div>
 </div>
 
@@ -648,7 +648,7 @@
             <label for="message">How can we help?</label>
             <textarea id="message" name="message" placeholder="Tell us about your campaign goals, current CTV challenges, or budget range…"></textarea>
           </div>
-          <button type="submit" class="form-submit">Request Your Demo →</button>
+          <button type="submit" class="form-submit">Request a Consultation →</button>
         </form>
         <div class="form-processing" id="formProcessing" aria-live="polite">
           <div class="form-processing-spinner"></div>
