@@ -1,0 +1,11 @@
+[mcp_servers.tviq-elementor]
+url = "https://tviq.test/wp-json/mcp/elementor-mcp-server"
+
+[mcp_servers.tviq-elementor.http_headers]
+Authorization = "Basic bXdlbmRlcjplSVV0IDF6aWUgb09ORiBjQkRPIDZXdkggNlR6bA=="
+
+[mcp_servers.tviq-wp]
+url = "https://tviq.test/wp-json/mcp/mcp-adapter-default-server"
+
+[mcp_servers.tviq-wp.http_headers]
+Authorization = "Basic bXdlbmRlcjplSVV0IDF6aWUgb09ORiBjQkRPIDZXdkggNlR6bA=="
