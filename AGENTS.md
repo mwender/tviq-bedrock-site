@@ -46,6 +46,8 @@ agent-browser reload
 agent-browser close
 ```
 
+IMPORTANT: When working with `agent-browser`, favor `eval` and `snapshot` over snapping screenshots while using `open`. These tools (`eval` and `snapshot`) allow for direct DOM observation as opposed to the lower fidelity method of using `open` + screenshots.
+
 ## Project Assets
 
 - `bin/one-sheet-landing-page.md` — prompt/instructions for building the TVIQ Select one-sheet landing page via Elementor MCP.
