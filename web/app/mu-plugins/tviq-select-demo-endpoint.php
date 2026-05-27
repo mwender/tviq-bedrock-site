@@ -42,17 +42,19 @@ add_action('rest_api_init', function () {
         'callback'            => 'tviq_handle_select_demo',
         'permission_callback' => '__return_true',
         'args'                => [
-            'first_name' => ['required' => true,  'sanitize_callback' => 'sanitize_text_field'],
-            'last_name'  => ['required' => true,  'sanitize_callback' => 'sanitize_text_field'],
-            'company'    => ['required' => true,  'sanitize_callback' => 'sanitize_text_field'],
-            'email'      => [
+            // Elementor webhooks send field labels as keys (spaces → underscores via PHP
+            // parse_str), not custom_id values. Keys below match what Elementor actually sends.
+            'First_Name' => ['required' => true,  'sanitize_callback' => 'sanitize_text_field'],
+            'Last_Name'  => ['required' => true,  'sanitize_callback' => 'sanitize_text_field'],
+            'Company'    => ['required' => true,  'sanitize_callback' => 'sanitize_text_field'],
+            'Work_Email' => [
                 'required'          => true,
                 'sanitize_callback' => 'sanitize_email',
                 'validate_callback' => 'is_email',
             ],
-            'phone'    => ['required' => false, 'sanitize_callback' => 'sanitize_text_field'],
-            'interest' => ['required' => false, 'sanitize_callback' => 'sanitize_text_field'],
-            'message'  => ['required' => false, 'sanitize_callback' => 'sanitize_textarea_field'],
+            'Phone'             => ['required' => false, 'sanitize_callback' => 'sanitize_text_field'],
+            'Primary_Interest'  => ['required' => false, 'sanitize_callback' => 'sanitize_text_field'],
+            'How_can_we_help?'  => ['required' => false, 'sanitize_callback' => 'sanitize_textarea_field'],
         ],
     ]);
 });
@@ -82,16 +84,16 @@ function tviq_handle_select_demo(WP_REST_Request $request): WP_REST_Response {
     set_transient($key, $count + 1, HOUR_IN_SECONDS);
 
     $input_values = [
-        'input_1' => $request->get_param('first_name'),
-        'input_2' => $request->get_param('last_name'),
-        'input_3' => $request->get_param('company'),
-        'input_4' => $request->get_param('email'),
-        'input_6' => $request->get_param('interest'),
-        'input_7' => $request->get_param('message'),
+        'input_1' => $request->get_param('First_Name'),
+        'input_2' => $request->get_param('Last_Name'),
+        'input_3' => $request->get_param('Company'),
+        'input_4' => $request->get_param('Work_Email'),
+        'input_6' => $request->get_param('Primary_Interest'),
+        'input_7' => $request->get_param('How_can_we_help?'),
     ];
 
     // Only include phone if provided — avoids GF format validation on empty values
-    $phone = trim((string) $request->get_param('phone'));
+    $phone = trim((string) $request->get_param('Phone'));
     if ($phone !== '') {
         $input_values['input_5'] = $phone;
     }
