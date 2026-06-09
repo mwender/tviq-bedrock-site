@@ -42,7 +42,6 @@
     "wpackagist-plugin/disable-gutenberg": "*",
     "wpackagist-plugin/duplicate-page": "*",
     "wpackagist-plugin/elementor": "^4",
-    "wpackagist-plugin/insert-headers-and-footers": "*",
     "wpackagist-plugin/limit-login-attempts-reloaded": "*",
     "wpackagist-plugin/power-boost-for-gravity-forms": "^3.2",
     "wpackagist-plugin/safe-svg": "*",
