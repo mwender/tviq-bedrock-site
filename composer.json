@@ -34,6 +34,7 @@
     "wenmark/elementor-pro": "^4",
     "wenmark/gravityforms": "^2.10",
     "wenmark/sellers-json": "*",
+    "wenmark/wpcodebox2": "^1.2",
     "wordpress/mcp-adapter": "*",
     "wpackagist-plugin/ads-txt": "*",
     "wpackagist-plugin/akismet": "^5.7",

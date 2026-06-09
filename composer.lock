@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bc093feaa37f7079039bdd17b11550f5",
+    "content-hash": "7dd62bdde862cc1f18e28b7a08499a52",
     "packages": [
         {
             "name": "composer/installers",
@@ -1167,6 +1167,27 @@
             ],
             "description": "Implements the sellers.json standard for your WordPress site.",
             "homepage": "https://sellers-json.wenmarkdigital.com"
+        },
+        {
+            "name": "wenmark/wpcodebox2",
+            "version": "1.2.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.wenmarkdigital.com/satispress/wpcodebox2/1.2.1",
+                "shasum": "d8949b48ae4cf3b2a6ccf179a43e82551dfb3f40"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "authors": [
+                {
+                    "name": "WPCodeBox",
+                    "homepage": "https://wpcodebox.com"
+                }
+            ],
+            "description": "The most powerful Code Snippets Manager for WordPress.",
+            "homepage": "https://wpcodebox.com"
         },
         {
             "name": "wordpress/mcp-adapter",
