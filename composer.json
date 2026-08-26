@@ -5,19 +5,24 @@
   "description": "WordPress boilerplate with Composer, easier configuration, and an improved folder structure",
   "homepage": "https://roots.io/bedrock/",
   "repositories": {
-    "0": {
+    "wpackagist": {
       "type": "composer",
       "url": "https://wpackagist.org",
       "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
     },
-    "1": {
+    "wenmark": {
       "type": "composer",
       "url": "https://packages.wenmarkdigital.com/satispress/",
       "only": ["wenmark/*"]
     },
-    "2": {
+    "acf": {
       "type": "composer",
       "url": "https://connect.advancedcustomfields.com"
+    },
+    "emcp-tools": {
+      "type": "vcs",
+      "url": "https://github.com/msrbuilds/elementor-mcp",
+      "only": ["developer/elementor-mcp"]
     }
   },
   "require": {
@@ -51,6 +56,7 @@
     "wpengine/advanced-custom-fields-pro": "^6"
   },
   "require-dev": {
+    "developer/elementor-mcp": "^3.14",
     "laravel/pint": "^1.27",
     "pestphp/pest": "^4.0"
   },
@@ -58,6 +64,7 @@
     "optimize-autoloader": true,
     "preferred-install": "dist",
     "allow-plugins": {
+      "automattic/jetpack-autoloader": true,
       "composer/installers": true,
       "roots/wordpress-core-installer": true,
       "pestphp/pest-plugin": true
@@ -68,6 +75,7 @@
   "prefer-stable": true,
   "extra": {
     "installer-paths": {
+      "web/app/plugins/emcp-tools/": ["developer/elementor-mcp"],
       "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
