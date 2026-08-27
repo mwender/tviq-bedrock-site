@@ -51,6 +51,38 @@
 	color: var(--ink);
 	font-size: 14.5px;
 	font-family: inherit;
+
+	/* GF's framework pins every control to block-size:var(--gf-local-height),
+	   which computes to 38px. With border-box, 24px of padding and a 1.5px
+	   border, that leaves an 11px content box for 14.5px text — inputs survive
+	   because GF also gives them a matching line-height and centre their text
+	   internally, but the native select clips its descenders.
+	   `auto` lets padding drive the height, as it does in the comp (input 43px,
+	   select 45px). Setting GF's own custom property works with its cascade
+	   instead of fighting it, so no !important is needed here. */
+	--gf-local-height: auto;
+	--gf-local-min-height: 0;
+
+	/* With height:auto, GF's line-height (38px, sized to the old fixed height)
+	   would then drive the box instead — inflating the input to 64px and the
+	   textarea to 244px. The comp uses `normal` on all three controls. */
+	--gf-local-line-height: normal;
+	line-height: normal;
+}
+
+/**
+ * GF sets the placeholder to the field's own text colour, so placeholders were
+ * indistinguishable from typed input. The comp relied on the browser default
+ * (#757575). This uses the palette's ink at 55% instead of a neutral grey, so the
+ * placeholder keeps the design's purple cast while reading as clearly secondary.
+ *
+ * ~4.4:1 on the white field. Every field here has a visible <label>, so the
+ * placeholder is supplementary rather than the accessible name.
+ */
+.eti-tpl.eti-tpl--theme-contact-body-php .form-card input::placeholder,
+.eti-tpl.eti-tpl--theme-contact-body-php .form-card textarea::placeholder {
+	color: rgba(22, 16, 51, .55);
+	opacity: 1; /* Firefox applies its own opacity to ::placeholder. */
 }
 
 .eti-tpl.eti-tpl--theme-contact-body-php .form-card input:focus,
@@ -61,6 +93,10 @@
 }
 
 .eti-tpl.eti-tpl--theme-contact-body-php .form-card textarea {
+	/* The comp's textarea had no rows attribute, so min-height alone gave it
+	   100px. GF renders rows="10", whose intrinsic height wins over min-height —
+	   hence an explicit height to match the comp. Still user-resizable. */
+	height: 100px;
 	min-height: 100px;
 	resize: vertical;
 }
