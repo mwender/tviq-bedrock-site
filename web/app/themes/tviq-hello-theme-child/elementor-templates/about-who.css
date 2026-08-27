@@ -1,0 +1,4 @@
+/** About — Who Should Work With TVIQ: comp inline heading size. */
+.eti-tpl.eti-tpl--theme-about-who-php .section-title {
+	font-size: clamp(26px, 3.4vw, 38px);
+}

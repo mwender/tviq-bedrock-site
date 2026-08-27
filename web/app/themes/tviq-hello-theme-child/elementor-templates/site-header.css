@@ -1,0 +1,153 @@
+/**
+ * Site Header — rules specific to this template.
+ *
+ * The comp's header/.nav/.nav-links/.nav-cta rules live in the shared
+ * assets/css/tviq-design.css. This file only covers what the comp had no markup
+ * for: the WordPress <ul>/<li> menu structure and the mobile drawer.
+ */
+
+/**
+ * Sticky positioning has to live on Elementor's theme-template wrapper, NOT on
+ * <header class="tviq-header">.
+ *
+ * NB: this element is deliberately NOT called `site-header` — Hello Elementor's
+ * header-footer.css styles `.site-header` with `display:flex; flex-wrap:wrap`,
+ * which turned .nav and .nav-drawer into flex siblings sharing one row. All
+ * classnames in these templates are prefixed so parent-theme rules cannot reach
+ * in; the .eti-tpl wrapper only protects the site FROM us, not us from the site.
+ *
+ * Every node between them — .eti-tpl, .elementor-widget-container, the widget
+ * element, and the container — is exactly the header's own height (87px). A
+ * sticky element is constrained by its containing block, so there it has zero
+ * travel range and never engages. The first ancestor with real height is <body>.
+ *
+ * This is the one deliberately unscoped rule in this file; it is narrow enough
+ * (direct child of body, Elementor's own header wrapper) not to leak.
+ */
+body > header.elementor {
+	position: sticky;
+	top: 0;
+	z-index: 50;
+}
+
+.eti-tpl.eti-tpl--theme-site-header-php .tviq-header {
+	position: static;
+}
+
+/* The comp's inline <img> carried no width/height attributes, so its
+   `.nav img{height:26px}` preserved aspect on its own. Ours sets them for CLS,
+   which pins the width unless it is explicitly released. */
+.eti-tpl.eti-tpl--theme-site-header-php .nav-logo img {
+	width: auto;
+}
+
+/* wp_nav_menu wraps items in <ul><li>; the comp used bare <a>. */
+.eti-tpl.eti-tpl--theme-site-header-php .nav-links,
+.eti-tpl.eti-tpl--theme-site-header-php .drawer-links {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.eti-tpl.eti-tpl--theme-site-header-php .nav-links > li {
+	display: block;
+}
+
+.eti-tpl.eti-tpl--theme-site-header-php .nav-links > li > a,
+.eti-tpl.eti-tpl--theme-site-header-php .drawer-links > li > a {
+	display: block;
+}
+
+/* The .active class is added by tviq_nav_active_class() so the shared
+   .nav-links a.active gradient rule applies unchanged. */
+.eti-tpl.eti-tpl--theme-site-header-php .nav-links a.active:hover {
+	background: var(--grad);
+}
+
+/* ---------- mobile drawer ---------- */
+
+.eti-tpl.eti-tpl--theme-site-header-php .nav-toggle {
+	display: none;
+	justify-self: end;
+	flex-direction: column;
+	justify-content: center;
+	gap: 5px;
+	width: 44px;
+	height: 44px;
+	padding: 0 10px;
+	border: 1px solid var(--line);
+	border-radius: 12px;
+	background: #fff;
+	cursor: pointer;
+}
+
+.eti-tpl.eti-tpl--theme-site-header-php .nav-toggle__bar {
+	display: block;
+	height: 2px;
+	width: 100%;
+	border-radius: 2px;
+	background: var(--ink);
+	transition: transform .2s ease, opacity .2s ease;
+}
+
+.eti-tpl.eti-tpl--theme-site-header-php .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(1) {
+	transform: translateY(7px) rotate(45deg);
+}
+
+.eti-tpl.eti-tpl--theme-site-header-php .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2) {
+	opacity: 0;
+}
+
+.eti-tpl.eti-tpl--theme-site-header-php .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(3) {
+	transform: translateY(-7px) rotate(-45deg);
+}
+
+.eti-tpl.eti-tpl--theme-site-header-php .nav-drawer {
+	display: none;
+}
+
+@media (max-width: 900px) {
+	.eti-tpl.eti-tpl--theme-site-header-php .nav {
+		grid-template-columns: auto 1fr;
+		gap: 16px;
+		padding: 16px 20px;
+	}
+
+	/* Desktop CTA collapses into the drawer. */
+	.eti-tpl.eti-tpl--theme-site-header-php .nav > .nav-cta {
+		display: none;
+	}
+
+	.eti-tpl.eti-tpl--theme-site-header-php .nav-toggle {
+		display: flex;
+	}
+
+	.eti-tpl.eti-tpl--theme-site-header-php .nav-drawer {
+		display: block;
+		border-top: 1px solid var(--line);
+		background: rgba(255, 255, 255, .98);
+		padding: 12px 20px 22px;
+	}
+
+	.eti-tpl.eti-tpl--theme-site-header-php .nav-drawer[hidden] {
+		display: none;
+	}
+
+	.eti-tpl.eti-tpl--theme-site-header-php .drawer-links > li > a {
+		padding: 13px 16px;
+		border-radius: 12px;
+		font-size: 16.1px;
+		font-weight: 600;
+		color: var(--ink);
+	}
+
+	.eti-tpl.eti-tpl--theme-site-header-php .drawer-links a.active {
+		background: var(--grad);
+		color: #fff;
+	}
+
+	.eti-tpl.eti-tpl--theme-site-header-php .nav-cta--drawer {
+		display: inline-block;
+		margin-top: 12px;
+	}
+}

@@ -1,0 +1,14 @@
+/**
+ * Services — Practices.
+ *
+ * The comp carried these two values as inline style attributes on the first and
+ * last blocks. All four blocks live in this one template, so positional selectors
+ * express the intent without per-section modifier classes.
+ */
+.eti-tpl.eti-tpl--theme-services-practices-php .practice-block:first-of-type {
+	padding-top: 90px;
+}
+
+.eti-tpl.eti-tpl--theme-services-practices-php .practice-block:last-of-type {
+	border-bottom: none;
+}

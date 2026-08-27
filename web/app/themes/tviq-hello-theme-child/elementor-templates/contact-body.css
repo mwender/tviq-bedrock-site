@@ -1,0 +1,132 @@
+/**
+ * Contact — Form & Details.
+ *
+ * The comp hand-wrote a static <form>; the real page renders Gravity Forms, whose
+ * markup nests fields in .gform_fields > .gfield and adds its own theme CSS. These
+ * rules re-point the comp's .form-card styling at GF's structure so the rendered
+ * form is visually identical to the comp.
+ */
+
+/* GF's own wrappers must not add spacing on top of .form-card's padding. */
+.eti-tpl.eti-tpl--theme-contact-body-php .form-card .gform_wrapper {
+	margin: 0;
+}
+
+.eti-tpl.eti-tpl--theme-contact-body-php .form-card .gform_fields {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.eti-tpl.eti-tpl--theme-contact-body-php .form-card .gfield {
+	margin: 0;
+}
+
+/* Comp: label{margin-top:20px} with the first label flush to the card top. */
+.eti-tpl.eti-tpl--theme-contact-body-php .form-card .gfield_label {
+	display: block;
+	font-size: 13px;
+	font-weight: 700;
+	color: var(--ink);
+	margin-bottom: 8px;
+	margin-top: 20px;
+}
+
+.eti-tpl.eti-tpl--theme-contact-body-php .form-card .gfield:first-child .gfield_label {
+	margin-top: 0;
+}
+
+.eti-tpl.eti-tpl--theme-contact-body-php .form-card input[type="text"],
+.eti-tpl.eti-tpl--theme-contact-body-php .form-card input[type="email"],
+.eti-tpl.eti-tpl--theme-contact-body-php .form-card select,
+.eti-tpl.eti-tpl--theme-contact-body-php .form-card textarea {
+	width: 100%;
+	background: #fff;
+	border: 1.5px solid var(--line);
+	border-radius: 10px;
+	padding: 12px 14px;
+	color: var(--ink);
+	font-size: 14.5px;
+	font-family: inherit;
+}
+
+.eti-tpl.eti-tpl--theme-contact-body-php .form-card input:focus,
+.eti-tpl.eti-tpl--theme-contact-body-php .form-card select:focus,
+.eti-tpl.eti-tpl--theme-contact-body-php .form-card textarea:focus {
+	outline: none;
+	border-color: var(--purple);
+}
+
+.eti-tpl.eti-tpl--theme-contact-body-php .form-card textarea {
+	min-height: 100px;
+	resize: vertical;
+}
+
+/* The comp used a native select and let the browser draw the arrow. GF sets
+   appearance:none and supplies its own arrow as a background-image, which the
+   `background` shorthand above removes — leaving a control with no affordance. */
+.eti-tpl.eti-tpl--theme-contact-body-php .form-card select {
+	-webkit-appearance: auto;
+	appearance: auto;
+}
+
+/* The comp's submit button reuses .cta-pill; GF renders a plain <input>/<button>.
+   GF's theme framework sizes the button with LOGICAL properties fed by custom
+   properties (inline-size: var(--gf-local-width)), which override a physical
+   `width`; its framework sheet also loads after this file and wins the remaining
+   ties at equal specificity. !important is the pragmatic escape hatch here — it is
+   scoped to this one button inside this one template, and the alternative is
+   chasing GF's selector weights on every plugin update. */
+.eti-tpl.eti-tpl--theme-contact-body-php .form-card .gform_footer {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+.eti-tpl.eti-tpl--theme-contact-body-php .form-card .gform_button {
+	margin-top: 26px !important;
+	inline-size: 100% !important;
+	text-align: center;
+	border: none !important;
+	cursor: pointer;
+	background: var(--grad) !important;
+	color: #fff !important;
+	font-size: 15px !important;
+	font-weight: 700 !important;
+	font-family: inherit;
+	padding: 15px 34px !important;
+	border-radius: 100px !important;
+	box-shadow: 0 10px 26px rgba(139, 63, 245, .32);
+}
+
+.eti-tpl.eti-tpl--theme-contact-body-php .form-card .gform_button:hover {
+	filter: brightness(1.08);
+}
+
+.eti-tpl.eti-tpl--theme-contact-body-php .form-card .gfield_required {
+	color: var(--purple);
+}
+
+.eti-tpl.eti-tpl--theme-contact-body-php .form-card .validation_message,
+.eti-tpl.eti-tpl--theme-contact-body-php .form-card .gform_validation_errors {
+	font-size: 13px;
+	margin-top: 8px;
+}
+
+/* Replaces the comp's inline styles on the "Connect" card lines. */
+.eti-tpl.eti-tpl--theme-contact-body-php .info-note {
+	font-size: 14.5px;
+	color: var(--dim);
+}
+
+.eti-tpl.eti-tpl--theme-contact-body-php .info-note + .info-note {
+	margin-top: 6px;
+}
+
+.eti-tpl.eti-tpl--theme-contact-body-php .info-note a {
+	color: var(--blue);
+	font-weight: 700;
+}

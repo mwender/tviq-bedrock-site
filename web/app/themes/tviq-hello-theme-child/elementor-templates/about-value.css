@@ -1,0 +1,5 @@
+/** About — Value Grid: comp inline heading size. */
+.eti-tpl.eti-tpl--theme-about-value-php .section-title {
+	font-size: clamp(28px, 3.6vw, 40px);
+	margin-bottom: 40px;
+}
