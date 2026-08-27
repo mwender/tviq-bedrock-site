@@ -23,7 +23,11 @@
       "type": "vcs",
       "url": "https://github.com/msrbuilds/elementor-mcp",
       "only": ["developer/elementor-mcp"]
-    }
+    },
+    "elementor-template-include": {
+      "type": "vcs",
+      "url": "https://github.com/mwender/elementor-template-include"
+    }    
   },
   "require": {
     "php": ">=8.3",
@@ -37,6 +41,7 @@
     "vlucas/phpdotenv": "^5.5",
     "wenmark/analyticswp": "*",
     "wenmark/elementor-pro": "^4",
+    "wenmark/elementor-template-include": "^0.1.1",
     "wenmark/gravityforms": "^2.10",
     "wenmark/sellers-json": "*",
     "wenmark/wpcodebox2": "^1.2",

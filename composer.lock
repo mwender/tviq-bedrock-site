@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a61569b77c8bcba5ea225017843be10",
+    "content-hash": "c933cbb467268d3a93299cb38fc899bd",
     "packages": [
         {
             "name": "composer/installers",
@@ -1127,6 +1127,54 @@
             "homepage": "https://go.elementor.com/wp-dash-wp-plugins-author-uri/"
         },
         {
+            "name": "wenmark/elementor-template-include",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mwender/elementor-template-include.git",
+                "reference": "2917d1fa9ee01970523d36cfd7343370866c7e50"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mwender/elementor-template-include/zipball/2917d1fa9ee01970523d36cfd7343370866c7e50",
+                "reference": "2917d1fa9ee01970523d36cfd7343370866c7e50",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "^2.2",
+                "php": ">=8.1"
+            },
+            "type": "wordpress-plugin",
+            "extra": {
+                "installer-name": "elementor-template-include"
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Wender",
+                    "email": "mwender@wenmarkdigital.com",
+                    "homepage": "https://mwender.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Elementor widget that live-includes .html and .php templates from registered directories on disk, with automatic sibling CSS/JS enqueueing.",
+            "homepage": "https://github.com/mwender/elementor-template-include",
+            "keywords": [
+                "elementor",
+                "elementor-widget",
+                "templates",
+                "wordpress",
+                "wordpress-plugin"
+            ],
+            "support": {
+                "issues": "https://github.com/mwender/elementor-template-include/issues",
+                "source": "https://github.com/mwender/elementor-template-include"
+            },
+            "time": "2026-08-27T15:15:54+00:00"
+        },
+        {
             "name": "wenmark/gravityforms",
             "version": "2.10.5",
             "dist": {
@@ -1513,15 +1561,15 @@
         },
         {
             "name": "wpackagist-theme/hello-elementor",
-            "version": "3.4.9",
+            "version": "3.5.1",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/hello-elementor/",
-                "reference": "3.4.9"
+                "reference": "3.5.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/hello-elementor.3.4.9.zip"
+                "url": "https://downloads.wordpress.org/theme/hello-elementor.3.5.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
