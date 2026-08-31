@@ -30,8 +30,12 @@ body > header.elementor {
 	z-index: 50;
 }
 
+/* `relative`, not `static`, so the mobile drawer below can position against this
+   box. It is layout-identical to static (no offsets are set) and does NOT bring
+   back the sticky behaviour the shared sheet puts on `header` — that still lives
+   on the Elementor wrapper above. */
 .eti-tpl.eti-tpl--theme-site-header-php .tviq-header {
-	position: static;
+	position: relative;
 }
 
 /* The comp's inline <img> carried no width/height attributes, so its
@@ -122,11 +126,31 @@ body > header.elementor {
 		display: flex;
 	}
 
+	/* Taken out of flow so opening the menu overlays the page instead of pushing
+	   it down — in flow, the drawer grew the header and shifted every section
+	   below it by the drawer's own height. Absolute against .tviq-header, so
+	   `top:100%` is the underside of the masthead. No z-index needed: the whole
+	   header is already a stacking context at z-index 50, so anything inside it
+	   paints above the page content. */
 	.eti-tpl.eti-tpl--theme-site-header-php .nav-drawer {
 		display: block;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
 		border-top: 1px solid var(--line);
-		background: rgba(255, 255, 255, .98);
+		border-bottom: 1px solid var(--line);
+		/* Fully opaque, unlike the masthead's translucent .92. The drawer opens
+		   over the hero, whose white display type sat on dark navy — at 98% the
+		   contrast was extreme enough that "REINVENTING" ghosted straight through
+		   the menu. A menu surface has to be readable before it is atmospheric. */
+		background: #fff;
+		box-shadow: 0 18px 32px rgba(20, 10, 60, .16);
 		padding: 12px 20px 22px;
+		/* A short list today, but never taller than the viewport below the
+		   header, and scrollable if the menu ever grows. */
+		max-height: calc(100dvh - 100%);
+		overflow-y: auto;
 	}
 
 	.eti-tpl.eti-tpl--theme-site-header-php .nav-drawer[hidden] {
@@ -141,9 +165,16 @@ body > header.elementor {
 		color: var(--ink);
 	}
 
+	/* Current page, deliberately quiet. The gradient pill this replaced read as a
+	   button — and sitting three rows above the gradient "Connect With Us" CTA, it
+	   made the drawer look like it had two actions, the louder of which linked to
+	   the page you were already on. --bg-soft is the palette's existing soft fill
+	   (it is also the desktop nav's hover), so this stays inside the system rather
+	   than introducing a neutral grey that would read as foreign next to the
+	   purples. Desktop keeps the gradient pill by choice. */
 	.eti-tpl.eti-tpl--theme-site-header-php .drawer-links a.active {
-		background: var(--grad);
-		color: #fff;
+		background: var(--bg-soft);
+		color: var(--ink);
 	}
 
 	.eti-tpl.eti-tpl--theme-site-header-php .nav-cta--drawer {

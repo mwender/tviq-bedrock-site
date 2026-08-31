@@ -80,9 +80,9 @@ $tviq_hex = get_stylesheet_directory_uri() . '/assets/img/hex-visual.png';
 <?php
 // Outcomes — grid of measurable outcome cards.
 //
-// The "Five Outcomes" headline above six cards is intentional and confirmed by the
-// client: five measurable outcomes plus "Flexible Engagement", which is a different
-// kind of card. Leave the copy and all six cards as they are.
+// Five cards, matching the headline. The sixth ("Flexible Engagement") was dropped
+// in the 2026-08-31 comp revision, which settles the earlier five-vs-six mismatch.
+// Card order matters: the grid places each one explicitly by :nth-child.
 ?>
 <section class="outcomes">
 	<div class="wrap">
@@ -98,7 +98,6 @@ $tviq_hex = get_stylesheet_directory_uri() . '/assets/img/hex-visual.png';
 			<div class="o-card"><div class="top-bar"></div><h4>Yield Per Impression &uarr;</h4><p>Optimized across SSPs, marketplaces, and direct demand.</p></div>
 			<div class="o-card"><div class="top-bar"></div><h4>Operational Overhead &darr;</h4><p>Less internal time on trafficking, QA, and reporting.</p></div>
 			<div class="o-card"><div class="top-bar"></div><h4>Revenue Per Headcount &uarr;</h4><p>Scale monetization without scaling your team.</p></div>
-			<div class="o-card"><div class="top-bar"></div><h4>Flexible Engagement</h4><p>Full-stack managed service, team augmentation, or technical audits.</p></div>
 		</div>
 	</div>
 </section>
@@ -108,7 +107,7 @@ $tviq_hex = get_stylesheet_directory_uri() . '/assets/img/hex-visual.png';
 	<div class="wrap">
 		<span class="pill">Our Team</span>
 		<h2>An Operational Force Multiplier, Led by Operators Who've Done This Before</h2>
-		<p>Leadership from Samsung, Fubo, Dish, Vizio, PubMatic &amp; TripleLift &mdash; directing an AI-enabled offshore delivery bench for 24/7 campaign and yield management.</p>
+		<p>Leadership from the largest streaming, publishing, and ad tech companies in the world &mdash; directing an AI-enabled offshore delivery bench for 24/7 campaign and yield management.</p>
 		<a href="<?php echo esc_url( tviq_page_url( 'about' ) ); ?>" class="arrow-link white">Meet the Team &rarr;</a>
 	</div>
 </section>
