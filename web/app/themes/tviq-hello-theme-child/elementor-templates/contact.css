@@ -152,8 +152,55 @@
 	filter: brightness(1.08);
 }
 
+/*
+ * Required markers.
+ *
+ * GF sizes the asterisk at 12px against a 13px label, so it read as a speck of
+ * lint rather than a marker. 22px with line-height:1 gives it real presence; the
+ * nudge is because an asterisk glyph sits high in its em box, so at this size it
+ * floats well above the label's cap height and reads as detached. The nudge drops
+ * it back onto the label. 22px is deliberately the ceiling — at 26px it starts to
+ * out-weigh the label it modifies.
+ *
+ * This covers the asterisk in the legend sentence too, not just the field labels:
+ * the legend exists to tell the reader what the marker looks like, so showing it
+ * at anything other than its real size defeats the point.
+ */
 .eti-tpl.eti-tpl--theme-contact-php .form-card .gfield_required {
 	color: var(--purple);
+}
+
+.eti-tpl.eti-tpl--theme-contact-php .form-card .gfield_required_asterisk {
+	font-size: 22px;
+	/* line-height:0 keeps the enlarged glyph out of the label's line box. Without
+	   it the 22px asterisk grew every required field's label row by 3px, so
+	   required and optional fields stopped sharing a vertical rhythm. */
+	line-height: 0;
+	margin-left: 2px;
+	position: relative;
+	top: 4px;
+}
+
+/*
+ * GF adds this line whenever the required indicator is an asterisk. Unstyled it
+ * inherits 20px — larger than the 13px labels it exists to explain, so it read as
+ * a heading. Sized to the labels and dimmed to sit behind them.
+ */
+.eti-tpl.eti-tpl--theme-contact-php .form-card .gform_required_legend {
+	font-size: 13px;
+	color: var(--dim);
+}
+
+/*
+ * Breathing room between the legend and the first field. The spacing goes on
+ * .gform_heading rather than the legend itself: the heading is GF's container for
+ * this block and is a sibling of the <form>, so the gap survives if GF ever adds a
+ * form title or description alongside the legend. It cannot come from the first
+ * label's margin-top either — that is reset to 0 so the label sits flush when the
+ * legend is absent (required indicator set to text rather than asterisk).
+ */
+.eti-tpl.eti-tpl--theme-contact-php .form-card .gform_heading {
+	margin-bottom: 14px;
 }
 
 .eti-tpl.eti-tpl--theme-contact-php .form-card .validation_message,
