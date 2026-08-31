@@ -1,0 +1,83 @@
+/**
+ * About — page styles.
+ *
+ * Shared rules live in assets/css/tviq-design.css; this file only holds what is
+ * specific to this page. Selectors must lead with both wrapper classes
+ * (.eti-tpl.eti-tpl--theme-about-php) so they outweigh the shared sheet.
+ *
+ * The comp gave four sections a `.section-title` at three different sizes. Each
+ * rule below is therefore keyed off its section's modifier class — a bare
+ * `.section-title` rule here would apply to all four.
+ */
+
+/* Value grid — comp inline heading size. */
+.eti-tpl.eti-tpl--theme-about-php .intro--value .section-title {
+	font-size: clamp(28px, 3.6vw, 40px);
+	margin-bottom: 40px;
+}
+
+/* The TVIQ Difference — comp inline heading size. */
+.eti-tpl.eti-tpl--theme-about-php .list-section--difference .section-title {
+	font-size: clamp(26px, 3.4vw, 38px);
+	font-weight: 800;
+	margin-bottom: 10px;
+}
+
+/* How We Work — comp inline section padding, heading size, lead width. */
+.eti-tpl.eti-tpl--theme-about-php .intro--how {
+	padding-bottom: 60px;
+}
+
+.eti-tpl.eti-tpl--theme-about-php .intro--how .section-title {
+	font-size: clamp(26px, 3.4vw, 38px);
+	margin-bottom: 10px;
+}
+
+.eti-tpl.eti-tpl--theme-about-php .intro--how .section-lead {
+	max-width: 600px;
+}
+
+/* Who Should Work With TVIQ — comp inline heading size. */
+.eti-tpl.eti-tpl--theme-about-php .intro--who .section-title {
+	font-size: clamp(26px, 3.4vw, 38px);
+}
+
+/**
+ * Team.
+ *
+ * The comp used an empty <div class="avatar"> filled with the brand gradient.
+ * Real portraits replace it with an <img> carrying the same class, so the shared
+ * .t-card .avatar rule still supplies the 52px circle and spacing — only the
+ * image-specific bits belong here.
+ *
+ * The gradient background is intentionally kept: it shows through while the
+ * lazy-loaded portrait decodes, and remains as a graceful fallback if an image
+ * is ever missing, so the card never collapses to an empty square.
+ */
+.eti-tpl.eti-tpl--theme-about-php .t-card .avatar {
+	display: block;
+	object-fit: cover;
+}
+
+/**
+ * DELIBERATE DEVIATION FROM THE COMP.
+ *
+ * The comp's own about.html scrolls the whole page horizontally on a 390px
+ * viewport — its @media block collapses every grid but never handles the
+ * three-column compare table, which stays ~359px wide inside a 310px content box.
+ * Confining the overflow to the table keeps the page itself from scrolling
+ * sideways. Verified against the comp: the flaw is in the delivered design.
+ */
+@media (max-width: 900px) {
+	/* Scoped to mobile: on desktop an overflow container establishes a new
+	   formatting context and added 11px to the section's height. */
+	.eti-tpl.eti-tpl--theme-about-php .compare-scroll {
+		max-width: 100%;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.eti-tpl.eti-tpl--theme-about-php .compare {
+		min-width: 520px;
+	}
+}

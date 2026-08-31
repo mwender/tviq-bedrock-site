@@ -1,5 +1,5 @@
 /**
- * Contact — Form & Details.
+ * Contact — page styles.
  *
  * The comp hand-wrote a static <form>; the real page renders Gravity Forms, whose
  * markup nests fields in .gform_fields > .gfield and adds its own theme CSS. These
@@ -8,11 +8,11 @@
  */
 
 /* GF's own wrappers must not add spacing on top of .form-card's padding. */
-.eti-tpl.eti-tpl--theme-contact-body-php .form-card .gform_wrapper {
+.eti-tpl.eti-tpl--theme-contact-php .form-card .gform_wrapper {
 	margin: 0;
 }
 
-.eti-tpl.eti-tpl--theme-contact-body-php .form-card .gform_fields {
+.eti-tpl.eti-tpl--theme-contact-php .form-card .gform_fields {
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 0;
@@ -21,12 +21,12 @@
 	list-style: none;
 }
 
-.eti-tpl.eti-tpl--theme-contact-body-php .form-card .gfield {
+.eti-tpl.eti-tpl--theme-contact-php .form-card .gfield {
 	margin: 0;
 }
 
 /* Comp: label{margin-top:20px} with the first label flush to the card top. */
-.eti-tpl.eti-tpl--theme-contact-body-php .form-card .gfield_label {
+.eti-tpl.eti-tpl--theme-contact-php .form-card .gfield_label {
 	display: block;
 	font-size: 13px;
 	font-weight: 700;
@@ -35,14 +35,14 @@
 	margin-top: 20px;
 }
 
-.eti-tpl.eti-tpl--theme-contact-body-php .form-card .gfield:first-child .gfield_label {
+.eti-tpl.eti-tpl--theme-contact-php .form-card .gfield:first-child .gfield_label {
 	margin-top: 0;
 }
 
-.eti-tpl.eti-tpl--theme-contact-body-php .form-card input[type="text"],
-.eti-tpl.eti-tpl--theme-contact-body-php .form-card input[type="email"],
-.eti-tpl.eti-tpl--theme-contact-body-php .form-card select,
-.eti-tpl.eti-tpl--theme-contact-body-php .form-card textarea {
+.eti-tpl.eti-tpl--theme-contact-php .form-card input[type="text"],
+.eti-tpl.eti-tpl--theme-contact-php .form-card input[type="email"],
+.eti-tpl.eti-tpl--theme-contact-php .form-card select,
+.eti-tpl.eti-tpl--theme-contact-php .form-card textarea {
 	width: 100%;
 	background: #fff;
 	border: 1.5px solid var(--line);
@@ -79,20 +79,20 @@
  * ~4.4:1 on the white field. Every field here has a visible <label>, so the
  * placeholder is supplementary rather than the accessible name.
  */
-.eti-tpl.eti-tpl--theme-contact-body-php .form-card input::placeholder,
-.eti-tpl.eti-tpl--theme-contact-body-php .form-card textarea::placeholder {
+.eti-tpl.eti-tpl--theme-contact-php .form-card input::placeholder,
+.eti-tpl.eti-tpl--theme-contact-php .form-card textarea::placeholder {
 	color: rgba(22, 16, 51, .55);
 	opacity: 1; /* Firefox applies its own opacity to ::placeholder. */
 }
 
-.eti-tpl.eti-tpl--theme-contact-body-php .form-card input:focus,
-.eti-tpl.eti-tpl--theme-contact-body-php .form-card select:focus,
-.eti-tpl.eti-tpl--theme-contact-body-php .form-card textarea:focus {
+.eti-tpl.eti-tpl--theme-contact-php .form-card input:focus,
+.eti-tpl.eti-tpl--theme-contact-php .form-card select:focus,
+.eti-tpl.eti-tpl--theme-contact-php .form-card textarea:focus {
 	outline: none;
 	border-color: var(--purple);
 }
 
-.eti-tpl.eti-tpl--theme-contact-body-php .form-card textarea {
+.eti-tpl.eti-tpl--theme-contact-php .form-card textarea {
 	/* The comp's textarea had no rows attribute, so min-height alone gave it
 	   100px. GF renders rows="10", whose intrinsic height wins over min-height —
 	   hence an explicit height to match the comp. Still user-resizable. */
@@ -104,7 +104,7 @@
 /* The comp used a native select and let the browser draw the arrow. GF sets
    appearance:none and supplies its own arrow as a background-image, which the
    `background` shorthand above removes — leaving a control with no affordance. */
-.eti-tpl.eti-tpl--theme-contact-body-php .form-card select {
+.eti-tpl.eti-tpl--theme-contact-php .form-card select {
 	-webkit-appearance: auto;
 	appearance: auto;
 }
@@ -116,13 +116,13 @@
    ties at equal specificity. !important is the pragmatic escape hatch here — it is
    scoped to this one button inside this one template, and the alternative is
    chasing GF's selector weights on every plugin update. */
-.eti-tpl.eti-tpl--theme-contact-body-php .form-card .gform_footer {
+.eti-tpl.eti-tpl--theme-contact-php .form-card .gform_footer {
 	display: block;
 	margin: 0;
 	padding: 0;
 }
 
-.eti-tpl.eti-tpl--theme-contact-body-php .form-card .gform_button {
+.eti-tpl.eti-tpl--theme-contact-php .form-card .gform_button {
 	margin-top: 26px !important;
 	inline-size: 100% !important;
 	text-align: center;
@@ -138,31 +138,31 @@
 	box-shadow: 0 10px 26px rgba(139, 63, 245, .32);
 }
 
-.eti-tpl.eti-tpl--theme-contact-body-php .form-card .gform_button:hover {
+.eti-tpl.eti-tpl--theme-contact-php .form-card .gform_button:hover {
 	filter: brightness(1.08);
 }
 
-.eti-tpl.eti-tpl--theme-contact-body-php .form-card .gfield_required {
+.eti-tpl.eti-tpl--theme-contact-php .form-card .gfield_required {
 	color: var(--purple);
 }
 
-.eti-tpl.eti-tpl--theme-contact-body-php .form-card .validation_message,
-.eti-tpl.eti-tpl--theme-contact-body-php .form-card .gform_validation_errors {
+.eti-tpl.eti-tpl--theme-contact-php .form-card .validation_message,
+.eti-tpl.eti-tpl--theme-contact-php .form-card .gform_validation_errors {
 	font-size: 13px;
 	margin-top: 8px;
 }
 
 /* Replaces the comp's inline styles on the "Connect" card lines. */
-.eti-tpl.eti-tpl--theme-contact-body-php .info-note {
+.eti-tpl.eti-tpl--theme-contact-php .info-note {
 	font-size: 14.5px;
 	color: var(--dim);
 }
 
-.eti-tpl.eti-tpl--theme-contact-body-php .info-note + .info-note {
+.eti-tpl.eti-tpl--theme-contact-php .info-note + .info-note {
 	margin-top: 6px;
 }
 
-.eti-tpl.eti-tpl--theme-contact-body-php .info-note a {
+.eti-tpl.eti-tpl--theme-contact-php .info-note a {
 	color: var(--blue);
 	font-weight: 700;
 }

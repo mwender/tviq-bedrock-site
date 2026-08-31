@@ -1,0 +1,26 @@
+/**
+ * Services — page styles.
+ *
+ * Shared rules live in assets/css/tviq-design.css; this file only holds what is
+ * specific to this page. Selectors must lead with both wrapper classes
+ * (.eti-tpl.eti-tpl--theme-services-php) so they outweigh the shared sheet.
+ */
+
+/* The comp carried these two values as inline style attributes on the first and
+   last practice blocks. They are keyed off explicit modifier classes rather than
+   :first-of-type/:last-of-type, because the hero and the CTA are now the first and
+   last <section> in this wrapper. */
+.eti-tpl.eti-tpl--theme-services-php .practice-block--first {
+	padding-top: 90px;
+}
+
+.eti-tpl.eti-tpl--theme-services-php .practice-block--last {
+	border-bottom: none;
+}
+
+/* Replaces the comp's inline style on the supporting line under the CTA headline. */
+.eti-tpl.eti-tpl--theme-services-php .cta-note {
+	color: var(--dim);
+	font-size: 16px;
+	margin-bottom: 36px;
+}

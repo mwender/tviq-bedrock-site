@@ -1,0 +1,17 @@
+/**
+ * Home — page styles.
+ *
+ * Everything shared across pages lives in assets/css/tviq-design.css; this file
+ * only holds rules specific to the home page. Selectors must lead with both
+ * wrapper classes (.eti-tpl.eti-tpl--theme-home-php) so they outweigh the shared
+ * sheet's two-class rules.
+ */
+
+/* Practices: the comp set this heading's size with an inline style attribute; it
+   lives here instead so the markup stays clean and the value is editable in one
+   place. */
+.eti-tpl.eti-tpl--theme-home-php .list-head__title {
+	font-size: clamp(28px, 4vw, 44px);
+	font-weight: 800;
+	line-height: 1.2;
+}

@@ -1,7 +1,10 @@
 <?php
 /**
- * Template Name: Contact — Form & Details
- * Description: Gravity Forms enquiry form alongside the contact detail cards.
+ * Template Name: Contact
+ * Description: The complete contact page — hero, Gravity Forms enquiry form, and
+ * contact detail cards.
+ *
+ * Consolidated from two per-section templates.
  *
  * @package TviqHelloThemeChild
  */
@@ -18,6 +21,19 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 $tviq_form_id = (int) apply_filters( 'tviq/contact_form_id', 2 );
 ?>
+
+<?php // Hero — gradient hero with chevron decorations and lead paragraph. ?>
+<section class="page-hero">
+	<?php require get_stylesheet_directory() . '/elementor-templates/_hero-deco.php'; ?>
+
+	<div class="wrap">
+		<span class="pill pill--on-dark">Contact</span>
+		<h1>Let's Talk About Your Revenue Operations.</h1>
+		<p class="lead">Tell us about your ad stack and where you'd like to grow &mdash; full-stack managed service, team augmentation, or a project-based technical audit.</p>
+	</div>
+</section>
+
+<?php // Form & details — the enquiry form alongside the contact detail cards. ?>
 <div class="wrap contact-grid">
 	<div class="form-card">
 		<?php
