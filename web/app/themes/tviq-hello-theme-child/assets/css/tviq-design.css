@@ -212,7 +212,17 @@
 @media (max-width:900px){
   .eti-tpl .intro-grid, .eti-tpl .outcome-grid, .eti-tpl .logo-strip .row, .eti-tpl .value-grid, .eti-tpl .team-grid, .eti-tpl .who-list, .eti-tpl .contact-grid, .eti-tpl .col-grid{grid-template-columns:1fr;}
   .eti-tpl .nav-links{display:none;}
-  .eti-tpl .desc-inline{display:none;}
+  /* The practice list is built around hover: the heading sits in a faded --ghost
+     until hovered, and the description is opacity:0 until hovered. Touch has no
+     hover, so a mobile visitor got the unhovered state permanently — every heading
+     washed out and the descriptions never visible at all (the comp simply hid them).
+     Show that content outright instead: description below its heading, left
+     aligned, and the heading at full strength.
+     Selectors match the base rules' specificity (.eti-tpl .num-item .desc-inline is
+     three classes) so these actually win — .eti-tpl .desc-inline would not. */
+  .eti-tpl .num-item{flex-direction:column; align-items:flex-start; gap:10px;}
+  .eti-tpl .num-item h3{color:var(--ink);}
+  .eti-tpl .num-item .desc-inline{opacity:1; margin-left:0; text-align:left; max-width:none; font-size:16px;}
   .eti-tpl .outcome-grid .o-card:nth-child(1), .eti-tpl .outcome-grid .o-card:nth-child(2), .eti-tpl .outcome-grid .o-card:nth-child(3), .eti-tpl .outcome-grid .o-card:nth-child(4), .eti-tpl .outcome-grid .o-card:nth-child(5){grid-column:auto;}
   .eti-tpl .how-row{grid-template-columns:repeat(2,1fr); gap:24px;}
   .eti-tpl .hero-split{grid-template-columns:1fr; gap:34px;}
