@@ -35,7 +35,17 @@
 	margin-top: 20px;
 }
 
-.eti-tpl.eti-tpl--theme-contact-php .form-card .gfield:first-child .gfield_label {
+/*
+ * The first VISIBLE field, which is not always the first .gfield.
+ *
+ * With GF's anti-spam on (it is, on production), GF injects a honeypot as the
+ * first .gfield — a .gform_validation_container that is display:none. That steals
+ * :first-child from the real first field, so the reset landed on an invisible
+ * element and the Name label kept its 20px, pushing the whole form down. The
+ * second selector covers the honeypot case; the first covers anti-spam being off.
+ */
+.eti-tpl.eti-tpl--theme-contact-php .form-card .gfield:first-child .gfield_label,
+.eti-tpl.eti-tpl--theme-contact-php .form-card .gform_validation_container + .gfield .gfield_label {
 	margin-top: 0;
 }
 
