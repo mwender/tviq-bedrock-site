@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <section class="practice-block practice-block--first">
   <div class="wrap">
     <div class="p-head">
-      <h2>CTV &amp; Online Video Revenue Operations</h2><p>End-to-end monetization management for enterprise streaming businesses.</p>
+      <h2>Omni-Channel Video and Audio Revenue Operations</h2><p>End-to-end monetization management for enterprise streaming businesses.</p>
     </div>
     <div class="col-grid">
       <div class="col"><h4>What We Deliver</h4><ul>
@@ -58,7 +58,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <section class="practice-block">
   <div class="wrap">
     <div class="p-head">
-      <h2>Ad Technology &amp; Platform Operations</h2><p>Whether launching a new FAST channel or optimizing an existing streaming business, TVIQ manages the ecosystem of platforms, integrations, and ad technology.</p>
+      <h2>Ad Technology &amp; Platform Operations</h2><p>Whether launching or optimizing a streaming business, or monetizing your podcast and streaming audio inventory, TVIQ manages the ecosystem of platforms, integrations, and ad technology.</p>
     </div>
     <div class="col-grid">
       <div class="col"><h4>Core Services</h4><ul>
@@ -73,7 +73,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         <div class="outcome-strip">
           <span>SpringServe / Magnite</span><span>Publica</span><span>Google Ad Manager</span>
           <span>FreeWheel</span><span>Added TV</span><span>Aniview</span><span>Elemental TV</span><span>Limelight</span><span>Teqblaze</span>
-          <span>Indicue</span><span>Basis</span><span>Beeswax</span><span>Claude</span><span>Gemini</span><span>ChatGPT</span><span>StackAdapt</span><span>SSPs</span><span>DSPs</span>
+          <span>Indicue</span><span>Basis</span><span>Beeswax</span><span>Claude</span><span>Gemini</span><span>ChatGPT</span><span>StackAdapt</span><span>SSPs</span><span>DSPs</span><span>Adswizz</span><span>Triton Digital</span><span>Megaphone</span><span>SoundCast</span>
         </div>
       </div>
     </div>

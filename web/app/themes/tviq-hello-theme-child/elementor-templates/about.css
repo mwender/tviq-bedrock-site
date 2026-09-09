@@ -47,7 +47,7 @@
  *
  * The comp used an empty <div class="avatar"> filled with the brand gradient.
  * Real portraits replace it with an <img> carrying the same class, so the shared
- * .t-card .avatar rule still supplies the 52px circle and spacing — only the
+ * .t-card .avatar rule still supplies the 78px circle and spacing — only the
  * image-specific bits belong here.
  *
  * The gradient background is intentionally kept: it shows through while the
