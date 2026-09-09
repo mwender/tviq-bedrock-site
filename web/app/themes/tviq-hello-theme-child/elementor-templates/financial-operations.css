@@ -1,0 +1,68 @@
+/**
+ * Financial Operations — page styles.
+ *
+ * Shared rules live in assets/css/tviq-design.css; this file only holds what is
+ * specific to this page. Selectors must lead with both wrapper classes
+ * (.eti-tpl.eti-tpl--theme-financial-operations-php) so they outweigh the shared
+ * sheet's two-class rules.
+ *
+ * Every rule here replaces an inline style attribute carried by the comp
+ * (bin/2026-09-09_new-design-edits/round-2/financial-operations.html), so the
+ * markup stays clean and each value is editable in one place.
+ */
+
+/* Practices — the comp trims the shared .intro padding and rules off the section. */
+.eti-tpl.eti-tpl--theme-financial-operations-php .intro--practices {
+	padding-bottom: 77px;
+	border-bottom: 1px solid var(--line);
+}
+
+.eti-tpl.eti-tpl--theme-financial-operations-php .section-title {
+	font-size: clamp(28px, 3.6vw, 40px);
+	margin-bottom: 24px;
+}
+
+/* Wider and more separated than the shared .intro p, which is sized for the
+   two-column intro grid on the home page. */
+.eti-tpl.eti-tpl--theme-financial-operations-php .section-lead {
+	max-width: 720px;
+	margin-bottom: 40px;
+}
+
+/* Four practice cards, so two per row rather than the shared three. */
+.eti-tpl.eti-tpl--theme-financial-operations-php .value-grid--pairs {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+/* Outcomes sits between two rules, so it drops the shared 110px padding. */
+.eti-tpl.eti-tpl--theme-financial-operations-php .outcomes--tight {
+	padding: 77px 0;
+	border-bottom: 1px solid var(--line);
+}
+
+.eti-tpl.eti-tpl--theme-financial-operations-php .intro--how {
+	padding-top: 77px;
+	padding-bottom: 60px;
+}
+
+.eti-tpl.eti-tpl--theme-financial-operations-php .section-title--how {
+	font-size: clamp(26px, 3.4vw, 38px);
+	margin-bottom: 10px;
+}
+
+.eti-tpl.eti-tpl--theme-financial-operations-php .how-lead {
+	max-width: 600px;
+}
+
+/* Supporting line under the CTA headline. */
+.eti-tpl.eti-tpl--theme-financial-operations-php .cta-note {
+	color: var(--dim);
+	font-size: 16px;
+	margin-bottom: 36px;
+}
+
+@media (max-width: 900px) {
+	.eti-tpl.eti-tpl--theme-financial-operations-php .value-grid--pairs {
+		grid-template-columns: 1fr;
+	}
+}

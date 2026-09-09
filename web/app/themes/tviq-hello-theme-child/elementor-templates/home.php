@@ -19,7 +19,12 @@ $tviq_hex = get_stylesheet_directory_uri() . '/assets/img/hex-visual.png';
 
 <?php // Hero — tall split hero with gradient wordmark and side panel. ?>
 <section class="page-hero tall">
-	<div class="hero-glow"></div>
+	<?php
+	// The glow is what the hero's overflow:hidden was for. Clipping it here instead
+	// frees the hero itself to overflow, so the "See How We Work" menu can hang past
+	// the hero's bottom edge — clipped there, its third item was unreachable.
+	?>
+	<div class="hero-glow-clip"><div class="hero-glow"></div></div>
 	<div class="wrap hero-split">
 		<div>
 			<h1>Reinventing<br>Media <span class="accent">Operations</span>.</h1>
@@ -28,7 +33,19 @@ $tviq_hex = get_stylesheet_directory_uri() . '/assets/img/hex-visual.png';
 			<div class="hero-divider"></div>
 			<p class="hero-eyebrow">Better Systems. Better Operations. Better Outcomes.</p>
 			<p class="lead">Integrated advisory, technology, and managed solutions for media companies.</p>
-			<a href="<?php echo esc_url( tviq_page_url( 'services' ) ); ?>" class="hero-link">See How We Work <span class="arrow-box">&rarr;</span></a>
+			<?php
+			// The single "See How We Work" link became a menu once there were three
+			// practice pages to send visitors to. <details> gives the open/close
+			// behaviour and keyboard support natively, so this needs no JavaScript.
+			?>
+			<details class="hero-dropdown">
+				<summary class="hero-link">See How We Work <span class="arrow-box">&rarr;</span></summary>
+				<div class="hero-dropdown-menu">
+					<a href="<?php echo esc_url( tviq_page_url( 'services' ) ); ?>">Revenue Operations</a>
+					<a href="<?php echo esc_url( tviq_page_url( 'financial-operations' ) ); ?>">Financial Operations</a>
+					<a href="<?php echo esc_url( tviq_page_url( 'sensei-ssp' ) ); ?>">Sensei SSP</a>
+				</div>
+			</details>
 		</div>
 	</div>
 </section>
@@ -58,11 +75,26 @@ $tviq_hex = get_stylesheet_directory_uri() . '/assets/img/hex-visual.png';
 	</div>
 </section>
 
+<?php // Financial operations — teaser for the FinOps practice page. ?>
+<section class="intro intro--finops">
+	<div class="wrap">
+		<span class="pill outline">TVIQ FinOps</span>
+		<h2 class="section-title">Financial Operations That Complete Your Revenue Lifecycle</h2>
+		<p class="section-lead">TVIQ connects revenue operations to financial control for publishers, SSPs, and ad tech platforms &mdash; extending your reconciliation workflow into invoicing, collections, cash forecasting, and outsourced controller support, with clear visibility from impression to bank account.</p>
+		<div class="value-grid">
+			<div class="v-card"><h3>Revenue Assurance &amp; Reconciliation</h3><p>Match platform reports to invoices and receipts, and reconcile publisher revenue shares.</p></div>
+			<div class="v-card"><h3>Cash Flow &amp; Collections</h3><p>Track receivables, coordinate collections, and maintain a rolling 13-week cash forecast.</p></div>
+			<div class="v-card"><h3>Outsourced Controller Services</h3><p>Embedded controller support for monthly close, reconciliations, and financial reporting.</p></div>
+		</div>
+		<a href="<?php echo esc_url( tviq_page_url( 'financial-operations' ) ); ?>" class="arrow-link blue explore-link">Explore Financial Operations &rarr;</a>
+	</div>
+</section>
+
 <?php // Practices — numbered list of the four integrated practices. ?>
 <section class="list-section">
 	<div class="wrap">
 		<div class="list-head">
-			<span class="pill outline">TVIQ Operations</span>
+			<span class="pill outline">TVIQ Revenue Operations</span>
 			<h2 class="list-head__title">Accelerate Performance Across the Revenue Spectrum</h2>
 			<p class="sub">Four Integrated Practices, One Operating Model</p>
 			<p class="desc">From ad server configuration to demand growth and revenue intelligence, TVIQ offers a full-stack set of practices designed to monetize every impression across your streaming business.</p>

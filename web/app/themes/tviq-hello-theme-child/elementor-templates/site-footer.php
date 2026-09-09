@@ -11,7 +11,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // The comp's footer row omits Home, so the primary menu is rendered manually
-// with the front-page item skipped rather than through wp_nav_menu().
+// with the front-page item skipped rather than through wp_nav_menu(). It also
+// omits Sensei SSP; that one is opt-out per item, via a `hide-in-footer` CSS
+// class on the menu item, so the choice stays editable in Appearance > Menus
+// rather than being hard-coded to a slug here.
 $tviq_front_id   = (int) get_option( 'page_on_front' );
 $tviq_menu_items = tviq_primary_menu_items();
 ?>
@@ -22,6 +25,10 @@ $tviq_menu_items = tviq_primary_menu_items();
 			<?php
 			foreach ( $tviq_menu_items as $tviq_item ) {
 				if ( $tviq_front_id && (int) $tviq_item->object_id === $tviq_front_id ) {
+					continue;
+				}
+
+				if ( in_array( 'hide-in-footer', (array) ( $tviq_item->classes ?? array() ), true ) ) {
 					continue;
 				}
 				?>

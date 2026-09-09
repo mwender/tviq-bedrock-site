@@ -16,3 +16,35 @@
 	line-height: 1.2;
 }
 
+
+/* Financial operations teaser: sits directly beneath the intro, so it drops the
+   shared .intro top padding rather than stacking two 110px gutters. */
+.eti-tpl.eti-tpl--theme-home-php .intro--finops {
+	padding-top: 0;
+}
+
+.eti-tpl.eti-tpl--theme-home-php .intro--finops .section-title {
+	font-size: clamp(28px, 3.6vw, 40px);
+	max-width: 760px;
+	margin-bottom: 24px;
+}
+
+/* Wider and more separated than the shared .intro p, which is sized for the
+   two-column intro grid above it. */
+.eti-tpl.eti-tpl--theme-home-php .intro--finops .section-lead {
+	max-width: 720px;
+	margin-bottom: 40px;
+}
+
+/* Hero: the glow is clipped by its own layer (see home.php), so the hero can let
+   the "See How We Work" menu hang past its bottom edge instead of cutting it off. */
+.eti-tpl.eti-tpl--theme-home-php .page-hero.tall {
+	overflow: visible;
+}
+
+.eti-tpl.eti-tpl--theme-home-php .hero-glow-clip {
+	position: absolute;
+	inset: 0;
+	overflow: hidden;
+	z-index: 0;
+}
