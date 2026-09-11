@@ -1,238 +1,26 @@
 {
-    "$schema": "https://adcontextprotocol.org/schemas/latest/adagents.json",
-    "authorized_agents":
-    [
-        {
-            "authorization_type": "property_tags",
-            "authorized_for": "TeqBlaze programmatic advertising sales agent",
-            "property_tags":
-            [
-                "all"
-            ],
-            "url": "https://adcp-tviq.teqblaze.io/mcp"
-        }
-    ],
-    "last_updated": "2026-09-08T10:34:14Z",
-    "properties":
-    [
-        {
-            "identifiers":
-            [
-                {
-                    "type": "domain",
-                    "value": "tviq.io"
-                }
-            ],
-            "name": "tviq.io",
-            "property_type": "website",
-            "supported_channels":
-            [
-                "display",
-                "olv",
-                "ctv"
-            ],
-            "tags":
-            [
-                "all"
-            ]
-        },
-        {
-            "identifiers":
-            [
-                {
-                    "type": "samsung_app_id",
-                    "value": "G15147002586"
-                }
-            ],
-            "name": "Samsung TV Plus",
-            "property_type": "ctv_app",
-            "supported_channels":
-            [
-                "ctv"
-            ],
-            "tags":
-            [
-                "all"
-            ]
-        },
-        {
-            "identifiers":
-            [
-                {
-                    "type": "bundle_id",
-                    "value": "vizio.watchfree"
-                }
-            ],
-            "name": "Vizio WatchFree",
-            "property_type": "ctv_app",
-            "supported_channels":
-            [
-                "ctv"
-            ],
-            "tags":
-            [
-                "all"
-            ]
-        },
-        {
-            "identifiers":
-            [
-                {
-                    "type": "roku_store_id",
-                    "value": "474301"
-                }
-            ],
-            "name": "Roku Channel 474301",
-            "property_type": "ctv_app",
-            "supported_channels":
-            [
-                "ctv"
-            ],
-            "tags":
-            [
-                "all"
-            ]
-        },
-        {
-            "identifiers":
-            [
-                {
-                    "type": "android_package",
-                    "value": "com.att.tv"
-                }
-            ],
-            "name": "AT&T TV",
-            "property_type": "ctv_app",
-            "supported_channels":
-            [
-                "ctv"
-            ],
-            "tags":
-            [
-                "all"
-            ]
-        },
-        {
-            "identifiers":
-            [
-                {
-                    "type": "android_package",
-                    "value": "com.xumo.xumo.tv"
-                }
-            ],
-            "name": "Xumo TV",
-            "property_type": "ctv_app",
-            "supported_channels":
-            [
-                "ctv"
-            ],
-            "tags":
-            [
-                "all"
-            ]
-        },
-        {
-            "identifiers":
-            [
-                {
-                    "type": "bundle_id",
-                    "value": "vizio.xumoplay"
-                }
-            ],
-            "name": "Vizio Xumo Play",
-            "property_type": "ctv_app",
-            "supported_channels":
-            [
-                "ctv"
-            ],
-            "tags":
-            [
-                "all"
-            ]
-        },
-        {
-            "identifiers":
-            [
-                {
-                    "type": "android_package",
-                    "value": "com.xumo.streambox"
-                }
-            ],
-            "name": "Xumo Streambox",
-            "property_type": "ctv_app",
-            "supported_channels":
-            [
-                "ctv"
-            ],
-            "tags":
-            [
-                "all"
-            ]
-        },
-        {
-            "identifiers":
-            [
-                {
-                    "type": "bundle_id",
-                    "value": "xumo.comcast"
-                }
-            ],
-            "name": "Xumo (Comcast)",
-            "property_type": "ctv_app",
-            "supported_channels":
-            [
-                "ctv"
-            ],
-            "tags":
-            [
-                "all"
-            ]
-        },
-        {
-            "identifiers":
-            [
-                {
-                    "type": "roku_store_id",
-                    "value": "196460"
-                }
-            ],
-            "name": "Roku Channel 196460",
-            "property_type": "ctv_app",
-            "supported_channels":
-            [
-                "ctv"
-            ],
-            "tags":
-            [
-                "all"
-            ]
-        },
-        {
-            "identifiers":
-            [
-                {
-                    "type": "roku_store_id",
-                    "value": "140474"
-                }
-            ],
-            "name": "Roku Channel 140474",
-            "property_type": "ctv_app",
-            "supported_channels":
-            [
-                "ctv"
-            ],
-            "tags":
-            [
-                "all"
-            ]
-        }
-    ],
-    "tags":
+  "$schema": "https://adcontextprotocol.org/schemas/latest/adagents.json",
+  "authorized_agents": [
     {
-        "all":
-        {
-            "description": "All properties in this file",
-            "name": "All Properties"
-        }
+      "authorization_type": "property_tags",
+      "authorized_for": "TVIQ programmatic advertising sales agent",
+      "property_tags": ["all"],
+      "url": "https://adcp-tviq.teqblaze.io/mcp"
     }
+  ],
+  "last_updated": "2026-09-11T11:36:56Z",
+  "properties": [
+    { "identifiers": [{ "type": "domain", "value": "tviq.io" }], "name": "tviq.io", "property_type": "website", "supported_channels": ["display", "olv", "ctv"], "tags": ["all"] },
+    { "identifiers": [{ "type": "samsung_app_id", "value": "G15147002586" }], "name": "Samsung TV Plus", "property_type": "ctv_app", "supported_channels": ["ctv"], "tags": ["all"] },
+    { "identifiers": [{ "type": "bundle_id", "value": "vizio.watchfree" }], "name": "Vizio WatchFree", "property_type": "ctv_app", "supported_channels": ["ctv"], "tags": ["all"] },
+    { "identifiers": [{ "type": "bundle_id", "value": "474301" }], "name": "LG Channels", "property_type": "ctv_app", "supported_channels": ["ctv"], "tags": ["all"] },
+    { "identifiers": [{ "type": "android_package", "value": "com.att.tv" }], "name": "AT&T TV", "property_type": "ctv_app", "supported_channels": ["ctv"], "tags": ["all"] },
+    { "identifiers": [{ "type": "android_package", "value": "com.xumo.xumo.tv" }], "name": "Xumo TV", "property_type": "ctv_app", "supported_channels": ["ctv"], "tags": ["all"] },
+    { "identifiers": [{ "type": "bundle_id", "value": "vizio.xumoplay" }], "name": "Vizio Xumo Play", "property_type": "ctv_app", "supported_channels": ["ctv"], "tags": ["all"] },
+    { "identifiers": [{ "type": "android_package", "value": "com.xumo.streambox" }], "name": "Xumo Streambox", "property_type": "ctv_app", "supported_channels": ["ctv"], "tags": ["all"] },
+    { "identifiers": [{ "type": "bundle_id", "value": "xumo.comcast" }], "name": "Xumo (Comcast)", "property_type": "ctv_app", "supported_channels": ["ctv"], "tags": ["all"] },
+    { "identifiers": [{ "type": "roku_store_id", "value": "196460" }], "name": "Philo", "property_type": "ctv_app", "supported_channels": ["ctv"], "tags": ["all"] },
+    { "identifiers": [{ "type": "roku_store_id", "value": "140474" }], "name": "DirecTV Stream", "property_type": "ctv_app", "supported_channels": ["ctv"], "tags": ["all"] }
+  ],
+  "tags": { "all": { "description": "All properties in this file", "name": "All Properties" } }
 }
