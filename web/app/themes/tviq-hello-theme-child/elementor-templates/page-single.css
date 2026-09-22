@@ -1,0 +1,91 @@
+/**
+ * Page Single — styles for plain WordPress pages.
+ *
+ * Shared rules live in assets/css/tviq-design.css; this file only holds what is
+ * specific to this template. Selectors must lead with both wrapper classes
+ * (.eti-tpl.eti-tpl--theme-page-single-php) so they outweigh the shared sheet's
+ * two-class rules.
+ *
+ * The shared reset zeroes every margin, and editor content arrives as bare
+ * <p>/<h2>/<ul> with no classes, so the prose rhythm is rebuilt here.
+ */
+
+/* A title-only hero, so it runs shorter than the pages that carry a lead. */
+.eti-tpl.eti-tpl--theme-page-single-php .page-hero--single {
+	padding: 110px 0 90px;
+}
+
+.eti-tpl.eti-tpl--theme-page-single-php .page-body {
+	padding: 90px 0 110px;
+	/* The other pages end on the CTA's bordered social row; this stands in for
+	   that line above the footer. */
+	border-bottom: 1px solid var(--line);
+}
+
+.eti-tpl.eti-tpl--theme-page-single-php .page-prose {
+	max-width: 760px;
+	font-size: 16.5px;
+	line-height: 1.75;
+	color: var(--dim);
+}
+
+.eti-tpl.eti-tpl--theme-page-single-php .page-prose p,
+.eti-tpl.eti-tpl--theme-page-single-php .page-prose ul,
+.eti-tpl.eti-tpl--theme-page-single-php .page-prose ol {
+	margin-bottom: 22px;
+}
+
+.eti-tpl.eti-tpl--theme-page-single-php .page-prose ul,
+.eti-tpl.eti-tpl--theme-page-single-php .page-prose ol {
+	padding-left: 24px;
+}
+
+.eti-tpl.eti-tpl--theme-page-single-php .page-prose li {
+	margin-bottom: 8px;
+}
+
+.eti-tpl.eti-tpl--theme-page-single-php .page-prose h2,
+.eti-tpl.eti-tpl--theme-page-single-php .page-prose h3 {
+	color: var(--ink);
+	font-weight: 800;
+	line-height: 1.25;
+	margin: 56px 0 18px;
+}
+
+.eti-tpl.eti-tpl--theme-page-single-php .page-prose h2 {
+	font-size: clamp(24px, 3vw, 30px);
+}
+
+.eti-tpl.eti-tpl--theme-page-single-php .page-prose h3 {
+	font-size: 20px;
+}
+
+.eti-tpl.eti-tpl--theme-page-single-php .page-prose > :first-child {
+	margin-top: 0;
+}
+
+.eti-tpl.eti-tpl--theme-page-single-php .page-prose > :last-child {
+	margin-bottom: 0;
+}
+
+.eti-tpl.eti-tpl--theme-page-single-php .page-prose strong {
+	color: var(--ink);
+}
+
+/* The shared sheet strips link styling for the comp's nav-like links; inside
+   running text a link has to read as one. */
+.eti-tpl.eti-tpl--theme-page-single-php .page-prose a {
+	color: var(--blue);
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+	.eti-tpl.eti-tpl--theme-page-single-php .page-hero--single {
+		padding: 80px 0 64px;
+	}
+
+	.eti-tpl.eti-tpl--theme-page-single-php .page-body {
+		padding: 56px 0 80px;
+	}
+}

@@ -1,0 +1,31 @@
+/**
+ * Site Footer — styles specific to the footer template.
+ *
+ * Shared rules live in assets/css/tviq-design.css. Selectors lead with both
+ * wrapper classes (.eti-tpl.eti-tpl--theme-site-footer-php) so they outweigh the
+ * shared sheet's two-class rules.
+ */
+
+/* The comp's footer padding. The shared sheet carries it as `.eti-tpl footer`
+   (0,1,1), which loses to the shared reset `.eti-tpl.eti-tpl *` (0,2,0), so the
+   footer had rendered with no padding at all — text sat flush against the line
+   above it. */
+.eti-tpl.eti-tpl--theme-site-footer-php .tviq-footer {
+	padding: 26px 0 50px;
+}
+
+/* Copyright line and legal links. The shared `.foot-bottom a` margin spaces the
+   nav row; here the gap does it, so the links wrap cleanly on narrow screens. */
+.eti-tpl.eti-tpl--theme-site-footer-php .foot-legal {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px 18px;
+}
+
+.eti-tpl.eti-tpl--theme-site-footer-php .foot-legal a {
+	margin-right: 0;
+}
+
+.eti-tpl.eti-tpl--theme-site-footer-php .foot-legal a:hover {
+	color: var(--ink);
+}
