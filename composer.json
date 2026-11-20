@@ -63,6 +63,7 @@
   },
   "require-dev": {
     "developer/elementor-mcp": "^3.14",
+    "enshrined/svg-sanitize": "1.1.1 as 0.22.0",
     "laravel/pint": "^1.27",
     "pestphp/pest": "^4.0"
   },
