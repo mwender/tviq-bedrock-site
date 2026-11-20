@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "62901056cfe98b90ff4a1252a12d37cf",
+    "content-hash": "abc402940e6016e0057825c0605f08ef",
     "packages": [
         {
             "name": "automattic/jetpack-autoloader",
@@ -1239,11 +1239,11 @@
         },
         {
             "name": "wenmark/gravityforms",
-            "version": "2.10.5",
+            "version": "3.2.3.1",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.wenmarkdigital.com/satispress/gravityforms/2.10.5",
-                "shasum": "f13ba93001258d17efe389c58b22506c817d0da8"
+                "url": "https://packages.wenmarkdigital.com/satispress/gravityforms/3.2.3.1",
+                "shasum": "da291f87ad89c534df0ac9fb562e909d2af4b628"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
